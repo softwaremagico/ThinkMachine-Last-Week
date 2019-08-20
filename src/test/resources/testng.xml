@@ -1,0 +1,27 @@
+<!--
+  #%L
+  Think Machine The Last Week
+  %%
+  Copyright (C) 2019 Softwaremagico
+  %%
+  This work is designed by Jorge Hortelano Otero. Jorge Hortelano Otero
+  <softwaremagico@gmail.com> Valencia (Spain).
+   
+  This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
+   
+  If you want to read more about this license, please see <https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode>.
+  #L%
+  -->
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="1" verbose="1" name="ThinkingMachineLastWeek">
+	<test name="LastWeek" enabled="true" preserve-order="true">
+		<groups>
+			<run>
+				<include name="customCharacters" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.softwaremagico.tm.characters.CustomCharacters" />
+		</classes>
+	</test>
+</suite>

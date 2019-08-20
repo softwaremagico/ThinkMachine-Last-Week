@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<damage>
+	<soft>
+		<name>
+			<en>Soft</en>
+			<es>Blando</es>
+		</name>
+	</soft>
+	<hard>
+		<name>
+			<en>Hard</en>
+			<es>Duro</es>
+		</name>
+	</hard>
+	<fire>
+		<name>
+			<en>Fire</en>
+			<es>Fuego</es>
+		</name>
+	</fire>
+	<laser>
+		<name>
+			<en>Laser</en>
+			<es>Láser</es>
+		</name>
+	</laser>
+	<xaser>
+		<name>
+			<en>Xaser</en>
+			<es>Xáser</es>
+		</name>
+	</xaser>
+	<graser>
+		<name>
+			<en>Graser</en>
+			<es>Gráser</es>
+		</name>
+	</graser>
+	<plasma>
+		<name>
+			<en>Plasma</en>
+			<es>Plasma</es>
+		</name>
+	</plasma>
+	<impact>
+		<name>
+			<en>Impact</en>
+			<es>Impacto</es>
+		</name>
+	</impact>
+	<shock>
+		<name>
+			<en>Shock</en>
+			<es>Eléctrico</es>
+		</name>
+	</shock>
+	<strangle>
+		<name>
+			<en>Strangle</en>
+			<es>Agarrar</es>
+		</name>
+	</strangle>
+	<vibro>
+		<name>
+			<en>Vibro</en>
+			<es>Vibro</es>
+		</name>
+	</vibro>
+	<bleed>
+		<name>
+			<en>Victim bleeds</en>
+			<es>La Víctima Sangra</es>
+		</name>
+	</bleed>
+	<sonic>
+		<name>
+			<en>Sonic</en>
+			<es>Sónico</es>
+		</name>
+	</sonic>
+	<neural>
+		<name>
+			<en>Neural</en>
+			<es>Neuronal</es>
+		</name>
+	</neural>
+	<halveArmour>
+		<name>
+			<en>Halve Armor</en>
+			<es>Armadura a la Mitad</es>
+		</name>
+	</halveArmour>
+	<ignoreArmour>
+		<name>
+			<en>Ignore Armor</en>
+			<es>Ignora la Armadura</es>
+		</name>
+	</ignoreArmour>
+	<psi>
+		<name>
+			<en>Psi</en>
+			<es>Psi</es>
+		</name>
+	</psi>
+</damage>

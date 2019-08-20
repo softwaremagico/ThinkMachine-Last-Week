@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<armours>
+	<chainMailMetal>
+		<name>
+			<en>Chain Mail (Metal)</en>
+			<es>Cota de Mallas (Metal)</es>
+		</name>
+		<techLevel>2</techLevel>
+		<protection>8</protection>
+		<standardPenalizations>
+			<strength>0</strength>
+			<dexterity>-1</dexterity>
+			<endurance>-2</endurance>
+			<initiative>-2</initiative>
+		</standardPenalizations>
+		<cost>50</cost>
+		<damageType>hard</damageType>
+		<shield>assaultShield, battleShield</shield>
+		<others>metal</others>
+	</chainMailMetal>
+	<halfPlateMetal>
+		<name>
+			<en>Half Plate (Metal)</en>
+			<es>Coraza (Metal)</es>
+		</name>
+		<techLevel>2</techLevel>
+		<protection>6</protection>
+		<standardPenalizations>
+			<strength>0</strength>
+			<dexterity>-1</dexterity>
+			<endurance>0</endurance>
+			<initiative>-3</initiative>
+		</standardPenalizations>
+		<cost>30</cost>
+		<damageType>hard</damageType>
+		<shield>battleShield</shield>
+		<others>metal</others>
+	</halfPlateMetal>
+	<halfPlatePlastic>
+		<name>
+			<en>Half Plate (Plastic)</en>
+			<es>Coraza (Plástico)</es>
+		</name>
+		<techLevel>5</techLevel>
+		<protection>6</protection>
+		<standardPenalizations>
+			<strength>0</strength>
+			<dexterity>0</dexterity>
+			<endurance>0</endurance>
+			<initiative>-2</initiative>
+		</standardPenalizations>
+		<cost>60</cost>
+		<damageType>soft, shock</damageType>
+		<shield>battleShield</shield>
+		<others></others>
+	</halfPlatePlastic>
+	<halfPlatePlasteel>
+		<name>
+			<en>Half Plate (Plasteel)</en>
+			<es>Coraza (Plastiacero)</es>
+		</name>
+		<techLevel>5</techLevel>
+		<protection>0</protection>
+		<standardPenalizations>
+			<strength>0</strength>
+			<dexterity>0</dexterity>
+			<endurance>0</endurance>
+			<initiative>-1</initiative>
+		</standardPenalizations>
+		<cost>100</cost>
+		<damageType>hard, shock</damageType>
+		<shield>battleShield</shield>
+		<others></others>
+	</halfPlatePlasteel>
+	<heavyClothing>
+		<name>
+			<en>Heavy Clothing</en>
+			<es>Ropa Pesada</es>
+		</name>
+		<techLevel>0</techLevel>
+		<protection>2</protection>
+		<standardPenalizations>
+			<strength>0</strength>
+			<dexterity>0</dexterity>
+			<endurance>0</endurance>
+			<initiative>-2</initiative>
+		</standardPenalizations>
+		<cost>4</cost>
+		<damageType>soft, shock</damageType>
+		<shield>standardShield, duelingShield, assaultShield, battleShield
+		</shield>
+		<others></others>
+	</heavyClothing>
+	<leatherJerkin>
+		<name>
+			<en>Leather Jerkin</en>
+			<es>Jubón de Cuero</es>
+		</name>
+		<techLevel>1</techLevel>
+		<protection>4</protection>
+		<standardPenalizations>
+			<strength>0</strength>
+			<dexterity>0</dexterity>
+			<endurance>0</endurance>
+			<initiative>-1</initiative>
+		</standardPenalizations>
+		<cost>5</cost>
+		<damageType>soft, shock</damageType>
+		<shield>assaultShield, battleShield</shield>
+		<others></others>
+	</leatherJerkin>
+	<leatherJerkinStuddedMetal>
+		<name>
+			<en>Leather Jerkin Studded (Metal)</en>
+			<es>Jubón de Cuero Tachonado (Metal)</es>
+		</name>
+		<techLevel>1</techLevel>
+		<protection>5</protection>
+		<standardPenalizations>
+			<strength>0</strength>
+			<dexterity>-1</dexterity>
+			<endurance>0</endurance>
+			<initiative>-2</initiative>
+		</standardPenalizations>
+		<cost>8</cost>
+		<damageType>soft</damageType>
+		<shield>assaultShield, battleShield</shield>
+		<others>metal</others>
+	</leatherJerkinStuddedMetal>
+	<leatherJerkinStuddedPlastic>
+		<name>
+			<en>Leather Jerkin Studded (Plastic)</en>
+			<es>Jubón de Cuero Tachonado (Plástico)</es>
+		</name>
+		<techLevel>5</techLevel>
+		<protection>5</protection>
+		<standardPenalizations>
+			<strength>0</strength>
+			<dexterity>0</dexterity>
+			<endurance>0</endurance>
+			<initiative>-1</initiative>
+		</standardPenalizations>
+		<cost>15</cost>
+		<damageType>soft, shock</damageType>
+		<shield>assaultShield, battleShield</shield>
+		<others></others>
+	</leatherJerkinStuddedPlastic>
+	<paddedClothing>
+		<name>
+			<en>Padded Clothing</en>
+			<es>Ropa Acolchada</es>
+		</name>
+		<techLevel>0</techLevel>
+		<protection>1</protection>
+		<standardPenalizations>
+			<strength>0</strength>
+			<dexterity>0</dexterity>
+			<endurance>0</endurance>
+			<initiative>-1</initiative>
+		</standardPenalizations>
+		<cost>2</cost>
+		<damageType>soft</damageType>
+		<shield>standardShield, duelingShield, assaultShield, battleShield
+		</shield>
+		<others></others>
+	</paddedClothing>
+	<plateMailSuitMetal>
+		<name>
+			<en>Plate Mail Suit (Metal)</en>
+			<es>Armadura de Placas Completa (Metal)</es>
+		</name>
+		<techLevel>2</techLevel>
+		<protection>10</protection>
+		<standardPenalizations>
+			<strength>-1</strength>
+			<dexterity>-2</dexterity>
+			<endurance>-2</endurance>
+			<initiative>-4</initiative>
+		</standardPenalizations>
+		<cost>70</cost>
+		<damageType>hard</damageType>
+		<shield>battleShield</shield>
+		<others>metal</others>
+	</plateMailSuitMetal>
+	<scaleMailMetal>
+		<name>
+			<en>Scale Mail (Metal)</en>
+			<es>Cota de Placas (Metal)</es>
+		</name>
+		<techLevel>1</techLevel>
+		<protection>7</protection>
+		<standardPenalizations>
+			<strength>0</strength>
+			<dexterity>-1</dexterity>
+			<endurance>-1</endurance>
+			<initiative>-2</initiative>
+		</standardPenalizations>
+		<cost>20</cost>
+		<damageType>hard</damageType>
+		<shield>battleShield</shield>
+		<others>metal</others>
+	</scaleMailMetal>
+</armours>
