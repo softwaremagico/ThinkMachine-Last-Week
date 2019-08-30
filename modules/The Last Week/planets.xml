@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <planets>
-	<terra>
+	<habitax>
 		<name>
-			<en>Terra</en>
-			<es>Tierra</es>
+			<en>Habitax</en>
+			<es>Habitax</es>
 		</name>
-	</terra>
+	</habitax>
 </planets>

@@ -434,6 +434,10 @@
 				<en>Beasts</en>
 				<es>Bestias</es>
 			</beastsLore>
+			<weaponsLore>
+				<en>Weapons</en>
+				<es>Armas</es>
+			</weaponsLore>
 			<computingLore>
 				<en>Computing</en>
 				<es>Informática</es>
@@ -445,6 +449,22 @@
 				<en>Poisons</en>
 				<es>Venenos</es>
 			</poisons>
+			<religion>
+				<en>Religion</en>
+				<es>Religión</es>
+			</religion>
+			<undead>
+				<en>Undead</en>
+				<es>No-Muertos</es>
+			</undead>
+			<demons>
+				<en>Demons</en>
+				<es>Demonios</es>
+			</demons>
+			<fairies>
+				<en>Fairies</en>
+				<es>Hadas</es>
+			</fairies>
 		</specializations>
 		<numberToShow>4</numberToShow>
 	</lore>

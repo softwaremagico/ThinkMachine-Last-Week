@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <weapons>
+	<chainsaw>
+		<name>
+			<en>Chainsaw</en>
+			<es>Motosierra</es>
+		</name>
+		<characteristic>dexterity</characteristic>
+		<skill>melee</skill>
+		<type>MELEE</type>
+		<techLevel>3</techLevel>
+		<goal>-2</goal>
+		<damage>7</damage>
+		<strength>6</strength>
+		<size>L</size>
+		<damageType>hard, vibro</damageType>
+		<cost>120</cost>
+	</chainsaw>
 	<axe>
 		<name>
 			<en>Axe</en>
@@ -809,7 +825,7 @@
 	<typicalLightAutofeed>
 		<name>
 			<en>Typical Light Autofeed</en>
-			<es>Autorrecarga Ligera Típica</es>
+			<es>Automática Ligera Típica</es>
 		</name>
 		<characteristic>dexterity</characteristic>
 		<skill>slugGuns</skill>
@@ -871,7 +887,7 @@
 	<typicalMed.Autofeed>
 		<name>
 			<en>Typical Med. Autofeed (.40)</en>
-			<es>Autorecarga Mediana Típica</es>
+			<es>Automática Mediana Típica</es>
 		</name>
 		<characteristic>dexterity</characteristic>
 		<skill>slugGuns</skill>
@@ -913,7 +929,7 @@
 	<typicalHvyAutofeed>
 		<name>
 			<en>Typical Heavy Autofeed (.47)</en>
-			<es>Autorrecarga Pesada Típica (.47)</es>
+			<es>Automática Pesada Típica (.47)</es>
 		</name>
 		<characteristic>dexterity</characteristic>
 		<skill>slugGuns</skill>
@@ -1149,7 +1165,7 @@
 			<es>Lanzallamas</es>
 		</name>
 		<characteristic>dexterity</characteristic>
-		<skill>energyGuns</skill>
+		<skill>slugGuns</skill>
 		<type>FLAMMER</type>
 		<techLevel>4</techLevel>
 		<goal>2</goal>

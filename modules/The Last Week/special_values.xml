@@ -23,13 +23,13 @@
 			<en>Ranged Attacks</en>
 			<es>Disparo</es>
 		</name>
-		<affects>archery, slugGuns, gunnery, artillery, energyGuns</affects>
+		<affects>archery, slugGuns, gunnery, artillery</affects>
 	</rangedAttacks>
 	<controlSkills>
 		<name>
 			<en>Control Skills</en>
 			<es>Habilidades de Control</es>
 		</name>
-		<affects>beastcraft, watercraft, ride, aircraft, spacecraft, landcarft</affects>
+		<affects>beastcraft, watercraft, ride, aircraft, landcarft</affects>
 	</controlSkills>
 </specialValues>

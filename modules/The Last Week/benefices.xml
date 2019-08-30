@@ -1,13 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <benefices>
-	<alienUpbringing>
-		<name>
-			<en>Alien Upbringing</en>
-			<es>Educación Alienígena</es>
-		</name>
-		<cost>2</cost>
-		<group>background</group>
-	</alienUpbringing>
 	<heir>
 		<name>
 			<en>Heir</en>
@@ -28,12 +20,6 @@
 					<es>Latin</es>
 				</name>
 			</latinLanguage>
-			<barbarianLanguage>
-				<name>
-					<en>Barbarian</en>
-					<es>Bárbaro</es>
-				</name>
-			</barbarianLanguage>
 			<gracefulTongue>
 				<name>
 					<en>Graceful Tongue</en>
@@ -123,15 +109,6 @@
 		<group>background</group>
 		<affliction>true</affliction>
 	</orphan>
-	<stigma>
-		<name>
-			<en>Stigma</en>
-			<es>Estigma</es>
-		</name>
-		<cost>1-4</cost>
-		<group>background</group>
-		<affliction>true</affliction>
-	</stigma>
 	<vow>
 		<name>
 			<en>Vow</en>
@@ -228,7 +205,7 @@
 					<en>0 euros</en>
 					<es>0 euros</es>
 				</name>
-				<cost>4</cost>
+				<cost>2</cost>
 				<specializationIsAffliction>true</specializationIsAffliction>
 			</euros0>
 			<euros50>
@@ -236,7 +213,7 @@
 					<en>50 euros</en>
 					<es>50 euros</es>
 				</name>
-				<cost>2</cost>
+				<cost>0</cost>
 				<specializationIsAffliction>true</specializationIsAffliction>
 			</euros50>
 			<euros250>
@@ -244,7 +221,7 @@
 					<en>250 euros</en>
 					<es>250 euros</es>
 				</name>
-				<cost>0</cost>
+				<cost>2</cost>
 			</euros250>
 			<euros1000>
 				<name>
@@ -258,36 +235,36 @@
 					<en>2000 euros</en>
 					<es>2000 euros</es>
 				</name>
-				<cost>8</cost>
+				<cost>5</cost>
 			</euros2000>
 			<euros3000>
 				<name>
 					<en>3000 euros</en>
 					<es>3000 euros</es>
 				</name>
-				<cost>12</cost>
+				<cost>6</cost>
 			</euros3000>
-			<euros4000>
-				<name>
-					<en>4000 euros</en>
-					<es>4000 euros</es>
-				</name>
-				<cost>16</cost>
-			</euros4000>
 			<euros5000>
 				<name>
 					<en>5000 euros</en>
 					<es>5000 euros</es>
 				</name>
-				<cost>20</cost>
+				<cost>7</cost>
 			</euros5000>
-			<euros6000>
+			<euros8000>
 				<name>
-					<en>6000 euros</en>
-					<es>6000 euros</es>
+					<en>8000 euros</en>
+					<es>8000 euros</es>
 				</name>
-				<cost>24</cost>
-			</euros6000>
+				<cost>8</cost>
+			</euros8000>
+			<euros10000>
+				<name>
+					<en>10000 euros</en>
+					<es>10000 euros</es>
+				</name>
+				<cost>9</cost>
+			</euros10000>
 		</specializations>
 		<group>riches</group>	
 	</cash>
@@ -309,22 +286,6 @@
 		<affliction>true</affliction>
 	</indebted>
 	
-	<cohortBadge>
-		<name>
-			<en>Cohort Badge</en>
-			<es>Insignia de Corte</es>
-		</name>
-		<cost>3</cost>
-		<group>status</group>
-	</cohortBadge>
-	<coven>
-		<name>
-			<en>Coven</en>
-			<es>Aquelarre</es>
-		</name>
-		<cost>2</cost>
-		<group>status</group>
-	</coven>
 	<householder>
 		<name>
 			<en>Householder</en>
@@ -525,24 +486,6 @@
 		<group>status</group>
 		<affliction>true</affliction>
 	</escapedSerf>
-	<escapedSlave>
-		<name>
-			<en>Escaped Slave</en>
-			<es>Esclavo Fugado</es>
-		</name>
-		<cost>3</cost>
-		<group>status</group>
-		<affliction>true</affliction>
-	</escapedSlave>
-	<excommunicated>
-		<name>
-			<en>Excommunicated</en>
-			<es>Excomulgado</es>
-		</name>
-		<cost>3</cost>
-		<group>status</group>
-		<affliction>true</affliction>
-	</excommunicated>
 	<fallenFromGrace>
 		<name>
 			<en>Fallen form Grace</en>
@@ -561,4 +504,29 @@
 		<group>status</group>
 		<affliction>true</affliction>
 	</outlaw>
+	
+	<typicalLightRevolver>
+		<name>
+			<en>Typical Light Revolver (.32)</en>
+			<es>Revolver Ligero Típico (.32)</es>
+		</name>
+		<cost>1</cost>
+		<group>technology</group>
+	</typicalLightRevolver>
+	<typicalMed.Autofeed>
+		<name>
+			<en>Typical Med. Autofeed (.40)</en>
+			<es>Automática Mediana Típica</es>
+		</name>
+		<cost>1</cost>
+		<group>technology</group>
+	</typicalMed.Autofeed>
+	<highPerformanceComputer>
+		<name>
+			<en>High Performance Computer</en>
+			<es>Ordenador de Altas Prestaciones</es>
+		</name>
+		<cost>2</cost>
+		<group>technology</group>
+	</highPerformanceComputer>
 </benefices>
