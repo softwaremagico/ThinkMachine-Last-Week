@@ -169,8 +169,6 @@ public class CustomCharacters {
 		final CharacterPlayer characterPlayer = new CharacterPlayer(LANGUAGE, MODULE_FOLDER);
 		characterPlayer.getInfo().setGender(Gender.MALE);
 		characterPlayer.getInfo().setAge(68);
-		characterPlayer.getInfo().addName(
-				new Name("Bill", characterPlayer.getLanguage(), characterPlayer.getModuleName(), Gender.MALE, null));
 		characterPlayer.setRace(RaceFactory.getInstance().getElement("human", characterPlayer.getLanguage(),
 				characterPlayer.getModuleName()));
 		characterPlayer.getInfo().setPlanet(
@@ -178,6 +176,9 @@ public class CustomCharacters {
 						characterPlayer.getModuleName()));
 		characterPlayer.setFaction(FactionsFactory.getInstance().getElement("englishSpeaking",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()));
+		characterPlayer.getInfo().addName(
+				new Name("Bill", characterPlayer.getLanguage(), characterPlayer.getModuleName(), Gender.MALE,
+						characterPlayer.getFaction()));
 
 		characterPlayer.getCharacteristic(CharacteristicName.STRENGTH).setValue(6);
 		characterPlayer.getCharacteristic(CharacteristicName.DEXTERITY).setValue(6);
@@ -730,7 +731,7 @@ public class CustomCharacters {
 				.getInfo()
 				.setBackgroundDecription(
 						"Durante la última semana, "
-								+ "\n\nReglas Especiales: Siempre que quieras obtener información sobre una criatura y pudas consultar alguno de tus "
+								+ "\n\nReglas Especiales: Siempre que quieras obtener información sobre una criatura fantástica y pudas consultar alguno de tus "
 								+ "libros de rol puedes hacer una tirada de Saber. Según los PV obtenidos el Director de Juego de aportará "
 								+ "más o menos información.");
 
