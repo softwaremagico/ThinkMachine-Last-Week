@@ -220,7 +220,7 @@
 		<random>
 			<minTechLevel>0</minTechLevel>
 			<maxTechLevel>3</maxTechLevel>
-		</random>		
+		</random>
 	</beastcraft>
 	<watercraft>
 		<name>
@@ -525,5 +525,15 @@
 		<random>
 			<minTechLevel>4</minTechLevel>
 		</random>
-	</computing>	
+	</computing>
+	<medicine>
+		<name>
+			<en>Medicine</en>
+			<es>Medicina</es>
+		</name>
+		<group>analytical</group>
+		<random>
+			<minTechLevel>2</minTechLevel>
+		</random>
+	</medicine>
 </skills>

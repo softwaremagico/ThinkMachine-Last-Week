@@ -518,7 +518,7 @@
 			<en>Typical Med. Autofeed (.40)</en>
 			<es>Automática Mediana Típica</es>
 		</name>
-		<cost>1</cost>
+		<cost>2</cost>
 		<group>technology</group>
 	</typicalMed.Autofeed>
 	<highPerformanceComputer>

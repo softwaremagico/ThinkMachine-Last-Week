@@ -248,6 +248,9 @@ public class CustomCharacters {
 		characterPlayer.setSkillRank(
 				AvailableSkillsFactory.getInstance().getElement("survival", characterPlayer.getLanguage(),
 						characterPlayer.getModuleName()), 5);
+		characterPlayer.setSkillRank(
+				AvailableSkillsFactory.getInstance().getElement("selfControl", characterPlayer.getLanguage(),
+						characterPlayer.getModuleName()), 3);
 
 		characterPlayer.addBlessing(BlessingFactory.getInstance().getElement("disciplined",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()));
@@ -305,8 +308,8 @@ public class CustomCharacters {
 		characterPlayer.getCharacteristic(CharacteristicName.PERCEPTION).setValue(6);
 		characterPlayer.getCharacteristic(CharacteristicName.TECH).setValue(3);
 		characterPlayer.getCharacteristic(CharacteristicName.PRESENCE).setValue(6);
-		characterPlayer.getCharacteristic(CharacteristicName.WILL).setValue(6);
-		characterPlayer.getCharacteristic(CharacteristicName.FAITH).setValue(6);
+		characterPlayer.getCharacteristic(CharacteristicName.WILL).setValue(4);
+		characterPlayer.getCharacteristic(CharacteristicName.FAITH).setValue(8);
 
 		characterPlayer.setSkillRank(
 				AvailableSkillsFactory.getInstance().getElement("vigor", characterPlayer.getLanguage(),
@@ -335,6 +338,9 @@ public class CustomCharacters {
 		characterPlayer.setSkillRank(
 				AvailableSkillsFactory.getInstance().getElement("fight", characterPlayer.getLanguage(),
 						characterPlayer.getModuleName()), 3);
+		characterPlayer.setSkillRank(
+				AvailableSkillsFactory.getInstance().getElement("selfControl", characterPlayer.getLanguage(),
+						characterPlayer.getModuleName()), 7);
 
 		characterPlayer.setSkillRank(
 				AvailableSkillsFactory.getInstance().getElement("lore", "religion", characterPlayer.getLanguage(),
@@ -369,7 +375,10 @@ public class CustomCharacters {
 				characterPlayer.getCompleteNameRepresentation()
 						+ " es una persona devota y en la que al religión es el centro de lo que hace y "
 						+ " prácticamente puede justificar todos lo que ocurre a su alrededor a través de esta.");
-		characterPlayer.getInfo().setBackgroundDecription("Durante la última semana, ");
+		characterPlayer.getInfo().setBackgroundDecription("Durante la última semana, "
+				+ "\n\nReglas Especiales: en situaciones sobrenaturales y siempre que hagas una interpretación adecuada, "
+				+ "puedes intercambiar el valor de Voluntad con el de Fe."
+				+ "");
 
 		// Assert.assertEquals(CostCalculator.getCost(player),
 		// FreeStyleCharacterCreation.getFreeAvailablePoints(player.getInfo().getAge()));
@@ -603,6 +612,12 @@ public class CustomCharacters {
 		characterPlayer.setSkillRank(
 				AvailableSkillsFactory.getInstance().getElement("fight", characterPlayer.getLanguage(),
 						characterPlayer.getModuleName()), 6);
+		characterPlayer.setSkillRank(
+				AvailableSkillsFactory.getInstance().getElement("ride", characterPlayer.getLanguage(),
+						characterPlayer.getModuleName()), 3);
+		characterPlayer.setSkillRank(
+				AvailableSkillsFactory.getInstance().getElement("lore", "beastsLore", characterPlayer.getLanguage(),
+						characterPlayer.getModuleName()), 6);
 
 		characterPlayer.setSkillRank(
 				AvailableSkillsFactory.getInstance().getElement("computing", characterPlayer.getLanguage(),
@@ -610,6 +625,9 @@ public class CustomCharacters {
 		characterPlayer.setSkillRank(
 				AvailableSkillsFactory.getInstance().getElement("landcarft", characterPlayer.getLanguage(),
 						characterPlayer.getModuleName()), 3);
+		characterPlayer.setSkillRank(
+				AvailableSkillsFactory.getInstance().getElement("medicine", characterPlayer.getLanguage(),
+						characterPlayer.getModuleName()), 5);
 
 		characterPlayer.addBlessing(BlessingFactory.getInstance().getElement("tall", characterPlayer.getLanguage(),
 				characterPlayer.getModuleName()));
@@ -626,7 +644,8 @@ public class CustomCharacters {
 				CombatPreferences.PEACEFUL);
 		randomizeCharacter.createCharacter();
 
-		characterPlayer.getInfo().setCharacterDescription(characterPlayer.getCompleteNameRepresentation() + " ");
+		characterPlayer.getInfo().setCharacterDescription("A " + characterPlayer.getCompleteNameRepresentation() + " le gustó desde siempre la medicina, si bien no era tan buen "
+				+ "estudiante para acceder a la faculta de medicina. Al final se contentó con ser veterinaria");
 		characterPlayer.getInfo().setBackgroundDecription("Durante la última semana, ");
 
 		party.addMember(characterPlayer);
