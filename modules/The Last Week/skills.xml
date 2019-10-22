@@ -129,26 +129,36 @@
 			<minTechLevel>3</minTechLevel>
 		</random>
 	</socialScience>
-	<physicalScience>
+	<physics>
 		<name>
-			<en>Physical Science</en>
-			<es>Ciencia de la Física</es>
+			<en>Physics</en>
+			<es>Física</es>
 		</name>
 		<group>science</group>
 		<random>
 			<minTechLevel>2</minTechLevel>
 		</random>
-	</physicalScience>
-	<lifeScience>
+	</physics>
+	<chemistry>
 		<name>
-			<en>Life Science</en>
-			<es>Ciencia de la Vida</es>
+			<en>Chemistry</en>
+			<es>Química</es>
 		</name>
 		<group>science</group>
 		<random>
 			<minTechLevel>2</minTechLevel>
 		</random>
-	</lifeScience>
+	</chemistry>
+	<biology>
+		<name>
+			<en>Biology</en>
+			<es>Biología</es>
+		</name>
+		<group>science</group>
+		<random>
+			<minTechLevel>2</minTechLevel>
+		</random>
+	</biology>
 	<slugGuns>
 		<name>
 			<en>Slug Guns</en>
@@ -465,6 +475,10 @@
 				<en>Fairies</en>
 				<es>Hadas</es>
 			</fairies>
+			<drugs>
+				<en>Drugs</en>
+				<es>Drogas</es>
+			</drugs>
 		</specializations>
 		<numberToShow>4</numberToShow>
 	</lore>
