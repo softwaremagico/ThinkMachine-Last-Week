@@ -95,38 +95,40 @@ public class CustomCharacters {
 		characterPlayer.getCharacteristic(CharacteristicName.PERCEPTION).setValue(7);
 		characterPlayer.getCharacteristic(CharacteristicName.TECH).setValue(8);
 		characterPlayer.getCharacteristic(CharacteristicName.PRESENCE).setValue(4);
-		characterPlayer.getCharacteristic(CharacteristicName.WILL).setValue(3);
+		characterPlayer.getCharacteristic(CharacteristicName.WILL).setValue(6);
 		characterPlayer.getCharacteristic(CharacteristicName.FAITH).setValue(4);
 
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("vigor",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 3);
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 4);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("observe",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 6);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("influence",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 4);
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 6);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("throwing",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 3);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("sneak",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 5);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("factionLore",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 4);
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 6);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("planetaryLore",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 4);
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 7);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("phoenixEmpireLore",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 5);
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 7);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("fight",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 3);
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 4);
 
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("computing",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 6);
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 8);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("lore", "computingLore",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 5);
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 8);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("electronics",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 4);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("landcarft",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 3);
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 4);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("bureaucracy",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 2);
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 5);
+		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("search",
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 4);
 
 		characterPlayer.addBlessing(BlessingFactory.getInstance().getElement("hacker", characterPlayer.getLanguage(),
 				characterPlayer.getModuleName()));
@@ -142,13 +144,17 @@ public class CustomCharacters {
 
 		System.out.println("Geek " + CostCalculator.getCost(characterPlayer) + " de "
 				+ FreeStyleCharacterCreation.getFreeAvailablePoints(characterPlayer.getInfo().getAge()));
+		
+		Assert.assertEquals(CostCalculator.getCost(characterPlayer),
+				FreeStyleCharacterCreation.getFreeAvailablePoints(characterPlayer.getInfo().getAge()));
 
 		// Finalize the character.
 		final RandomizeCharacter randomizeCharacter = new RandomizeCharacter(characterPlayer, 0,
 				CombatPreferences.PEACEFUL);
 		randomizeCharacter.createCharacter();
 
-		String description = characterPlayer.getCompleteNameRepresentation() + " viste con pantalones cortos, una camiseta de algún grupo de rock olvidado y una gorra del viejo y nostálgico Space Invaders. Se dedica profesionalmente a la seguridad informática y aunque no lo dice, por la seguridad con la que habla hace evidente que es bueno en ello. Ha trabajado para multiples empresas muy conocidas del sector, pero actualmente se ha hecho autónomo y tiene una empresa propia localizada en un sótano de la ciudad que llama «El Búnker». ";
+		String description = characterPlayer.getCompleteNameRepresentation()
+				+ " viste con pantalones cortos, una camiseta de algún grupo de rock olvidado y una gorra del viejo y nostálgico Space Invaders. Se dedica profesionalmente a la seguridad informática y aunque no lo dice, por la seguridad con la que habla hace evidente que es bueno en ello. Ha trabajado para multiples empresas muy conocidas del sector, pero actualmente se ha hecho autónomo y tiene una empresa propia localizada en un sótano de la ciudad que llama «El Búnker». ";
 		String background = "Durante la última semana, te has desplazado a tu empresa personal para intentar acceder al exterior a pesar del corte de comunicaciones que ha sufrido la ciudad. Después de cierto esfuerzo y de utilizar una radio militar como repetidor de datos, has logrado conectar brevemente con el mundo exterior. Para tu sorpresa, parece que el mundo exterior ignora lo que está sucediendo en la ciudad. Los noticiarios y periódicos no dedican ni una sola palabra a lo ocurrido y solamente en un canal oscuro de rusia has encontrado especulaciones al respecto. En la última visita a El Bunker, casi te has cruzado con un peloton de militares. No te vieron por los pelos, ya que estaban ocupados persiguiendo a otro pobre desgraciado que deambulaba por las calles. El ruido de disparos de metralleta te obligó a ocultarte en el bunker, y no te atreviste a salir hasta dos horas después. El cuerpo sin vida de aquel desgraciado te convenció para no romper el toque de queda nunca más. ";
 		String specialRules = "Dispones de un ordenador portátil modificado que lo hace muy especial. Una gran variedad de software, puertos y cables te permiten conectarte a cualquier sistema informático al que tengas acceso físico, por lo que gracias a tus habilidades en la materia, puedes comprometer casi cualquier sistema con el tiempo necesario. No tienes penalización alguna a las tiradas de hacking siempre que puedas conectar directamente tu equipo al equipo que quieras atacar. ";
 		String secondaryObjectives = "Como chico antisistema, quieres obtener pruebas de conspiraciones entre grandes empresas y el gobierno. Cualquier cosa que desestabilice el gobierno actual y haga caer a una o dos empresas multimillinarias te haría ser la persona más feliz de la tierra. Si además la empresa está vinculada al desastre actual... ¡no puedes dejar de pasar esta oportunidad!";
@@ -180,9 +186,9 @@ public class CustomCharacters {
 		characterPlayer.getCharacteristic(CharacteristicName.WITS).setValue(5);
 		characterPlayer.getCharacteristic(CharacteristicName.PERCEPTION).setValue(6);
 		characterPlayer.getCharacteristic(CharacteristicName.TECH).setValue(5);
-		characterPlayer.getCharacteristic(CharacteristicName.PRESENCE).setValue(4);
-		characterPlayer.getCharacteristic(CharacteristicName.WILL).setValue(6);
-		characterPlayer.getCharacteristic(CharacteristicName.FAITH).setValue(4);
+		characterPlayer.getCharacteristic(CharacteristicName.PRESENCE).setValue(6);
+		characterPlayer.getCharacteristic(CharacteristicName.WILL).setValue(7);
+		characterPlayer.getCharacteristic(CharacteristicName.FAITH).setValue(6);
 
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("vigor",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 6);
@@ -199,7 +205,7 @@ public class CustomCharacters {
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("planetaryLore",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 4);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("phoenixEmpireLore",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 3);
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 4);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("fight",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 5);
 
@@ -212,19 +218,21 @@ public class CustomCharacters {
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("warfare",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 5);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("mechanics",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 2);
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 4);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("slugGuns",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 5);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("artillery",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 3);
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 4);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("gunnery",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 3);
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 4);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("melee",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 5);
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 6);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("survival",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 5);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("selfControl",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 3);
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 4);
+		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("tracking",
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 5);
 
 		characterPlayer.addBlessing(BlessingFactory.getInstance().getElement("disciplined",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()));
@@ -242,13 +250,17 @@ public class CustomCharacters {
 
 		System.out.println("Bill " + CostCalculator.getCost(characterPlayer) + " de "
 				+ FreeStyleCharacterCreation.getFreeAvailablePoints(characterPlayer.getInfo().getAge()));
+		
+		Assert.assertEquals(CostCalculator.getCost(characterPlayer),
+				FreeStyleCharacterCreation.getFreeAvailablePoints(characterPlayer.getInfo().getAge()));
 
 		// Finalize the character.
 		final RandomizeCharacter randomizeCharacter = new RandomizeCharacter(characterPlayer, 0,
 				CombatPreferences.BELLIGERENT);
 		randomizeCharacter.createCharacter();
 
-		String description = characterPlayer.getCompleteNameRepresentation() + " es un piloto de guerra ya retirado. En sus buenos tiempos, fue capitán de un gran bombardero de cuatro motores capaz de llevar cientos de toneladas de destrucción. Aunque le gusta jactarse de su formación militar, nunca ha vivido tiempos de guerra y por tanto, su experiencia se basa en maniobras de combates y simuladores virtuales. Después de muchas horas de preparación, su carrerá se vio truncada debido a un un accidente en unas maniobras. En dicho accidente perdió una pierna, lo que le obligó a retirarse. A pesar de su edad, tiene una forma física envidiable, únicamente mermada por su afición a los puros. ";
+		String description = characterPlayer.getCompleteNameRepresentation()
+				+ " es un piloto de guerra ya retirado. En sus buenos tiempos, fue capitán de un gran bombardero de cuatro motores capaz de llevar cientos de toneladas de destrucción. Aunque le gusta jactarse de su formación militar, nunca ha vivido tiempos de guerra y por tanto, su experiencia se basa en maniobras de combates y simuladores virtuales. Después de muchas horas de preparación, su carrerá se vio truncada debido a un un accidente en unas maniobras. En dicho accidente perdió una pierna, lo que le obligó a retirarse. A pesar de su edad, tiene una forma física envidiable, únicamente mermada por su afición a los puros. ";
 		String background = "Tu vieja radio militar no te ha dado noticias de lo que está ocurriendo. Saliste a la calle varias veces para presentarte voluntario para ayudar al ejército, pero solo conseguiste empujones y malos modos que te devolvieron a tu casa. Hace dos días, oistes disparos cerca de tu casa. Cogiste tu arma y te asomaste. Una ráfaga de metralleta te obligó apensártelo dos veces. Solo gracias a recitar en voz alta un viejo código númerico militar hizo que los militares no incendiaran tu casa con un lanzallamas. Aún estás esperando una explicación al respecto...";
 		String specialRules = "Dispones de un código de emergencia que puedes utilizar con los militares. Si comunicas este código a un alto rango, te permite demostrar que has sido militar anteriormente, lo que te permite ganar cierta confianza con ellos y quizá sacarte de algún apuro llegado el caso. ";
 		String secondaryObjectives = "Dado tu addicción al tabajo, tienes un tumor en los pulmones que resulta fatal. La falta de dinero por tu incapacidad de trabajar ha impedido que costearas cualquier tipo de tratamiento. Los últimos chequeos médicos te indican que te quedan pocas semanas de vida. Quien sabe, igual encuentras alguna forma de alargar tu vida aprovechando el caos y confusión que reina ahora. ";
@@ -273,31 +285,31 @@ public class CustomCharacters {
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()));
 
 		characterPlayer.getCharacteristic(CharacteristicName.STRENGTH).setValue(4);
-		characterPlayer.getCharacteristic(CharacteristicName.DEXTERITY).setValue(5);
+		characterPlayer.getCharacteristic(CharacteristicName.DEXTERITY).setValue(6);
 		characterPlayer.getCharacteristic(CharacteristicName.ENDURANCE).setValue(5);
-		characterPlayer.getCharacteristic(CharacteristicName.WITS).setValue(5);
+		characterPlayer.getCharacteristic(CharacteristicName.WITS).setValue(7);
 		characterPlayer.getCharacteristic(CharacteristicName.PERCEPTION).setValue(6);
 		characterPlayer.getCharacteristic(CharacteristicName.TECH).setValue(3);
-		characterPlayer.getCharacteristic(CharacteristicName.PRESENCE).setValue(6);
-		characterPlayer.getCharacteristic(CharacteristicName.WILL).setValue(4);
+		characterPlayer.getCharacteristic(CharacteristicName.PRESENCE).setValue(7);
+		characterPlayer.getCharacteristic(CharacteristicName.WILL).setValue(8);
 		characterPlayer.getCharacteristic(CharacteristicName.FAITH).setValue(8);
 
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("vigor",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 4);
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 5);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("observe",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 6);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("influence",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 6);
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 7);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("throwing",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 3);
-		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("sneak",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 3);
-		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("factionLore",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 4);
+		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("sneak",
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 5);
+		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("factionLore",
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 6);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("planetaryLore",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 5);
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 6);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("phoenixEmpireLore",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 5);
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 6);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("fight",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 3);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("selfControl",
@@ -305,10 +317,22 @@ public class CustomCharacters {
 
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("lore", "religion",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 8);
+		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("lore", "demons",
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 3);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("landcarft",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 2);
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 3);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("bureaucracy",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 4);
+		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("medicine",
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 2);
+		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("leadership",
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 5);
+		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("etiquette",
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 2);
+		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("empathy",
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 7);
+		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("search",
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 3);
 
 		characterPlayer.addBlessing(BlessingFactory.getInstance().getElement("disciplined",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()));
@@ -326,13 +350,17 @@ public class CustomCharacters {
 
 		System.out.println("Pious " + CostCalculator.getCost(characterPlayer) + " de "
 				+ FreeStyleCharacterCreation.getFreeAvailablePoints(characterPlayer.getInfo().getAge()));
+		
+		Assert.assertEquals(CostCalculator.getCost(characterPlayer),
+				FreeStyleCharacterCreation.getFreeAvailablePoints(characterPlayer.getInfo().getAge()));
 
 		// Finalize the character.
 		final RandomizeCharacter randomizeCharacter = new RandomizeCharacter(characterPlayer, 0,
 				CombatPreferences.PEACEFUL);
 		randomizeCharacter.createCharacter();
 
-		String description = characterPlayer.getCompleteNameRepresentation() + " es una persona devota y de las que coloca la religión como el centro de todo lo que hace. La religión le permite prácticamente justificar todos lo que ocurre a su alrededor, por lo que no necesita nada más. Tiene una vida serena y tranquila debido a ello. Ha visto -o cree haber visto- milagros delante suyo, lo que le demuestra que El Hacedor está siempre con ella y que todo tiene un plan divino. ";
+		String description = characterPlayer.getCompleteNameRepresentation()
+				+ " es una persona devota y de las que coloca la religión como el centro de todo lo que hace. La religión le permite prácticamente justificar todos lo que ocurre a su alrededor, por lo que no necesita nada más. Tiene una vida serena y tranquila debido a ello. Ha visto -o cree haber visto- milagros delante suyo, lo que le demuestra que El Hacedor está siempre con ella y que todo tiene un plan divino. ";
 		String background = "A pesar del toque de queda, te has dedicado a repartir consuelo por el barrio. Has visitado vecinos asustados a los que has invitado a rezar para recobrar el coraje y la fe. Durante la última noche te cruzaste con una persona poseída por el mismísimo demonio. Fuiste atacada y solo gracias a tu dios fuiste rescatada por un militar que patrullaba la zona. El militar te detuvo y te iba a encarcelar por violar el toque de queda, pero un grupo de atacantes os sorprendió desde la oscuridad de la noche y solo pudiste correr sin mirar atrás. ";
 		String specialRules = "En situaciones sobrenaturales y siempre que hagas una interpretación adecuada, puedes intercambiar el valor de Voluntad con el de Fe. Por ejemplo, puedes recitar pasajes del libro sagrado para reconfortarte y pasar una tirada de miedo, o repetir en voz alta que el creador te guía y superar una tirada para mantener los nervios. ";
 		String secondaryObjectives = "Te gustaría ser algo más que parte del rebaño. Una gran acción contra un gran ente del mal te podría dar el empujón para ser la primera mujer con altos cargos en tu religión. ";
@@ -358,38 +386,48 @@ public class CustomCharacters {
 
 		characterPlayer.getCharacteristic(CharacteristicName.STRENGTH).setValue(8);
 		characterPlayer.getCharacteristic(CharacteristicName.DEXTERITY).setValue(6);
-		characterPlayer.getCharacteristic(CharacteristicName.ENDURANCE).setValue(7);
+		characterPlayer.getCharacteristic(CharacteristicName.ENDURANCE).setValue(8);
 		characterPlayer.getCharacteristic(CharacteristicName.WITS).setValue(5);
-		characterPlayer.getCharacteristic(CharacteristicName.PERCEPTION).setValue(5);
+		characterPlayer.getCharacteristic(CharacteristicName.PERCEPTION).setValue(6);
 		characterPlayer.getCharacteristic(CharacteristicName.TECH).setValue(4);
-		characterPlayer.getCharacteristic(CharacteristicName.PRESENCE).setValue(7);
+		characterPlayer.getCharacteristic(CharacteristicName.PRESENCE).setValue(8);
 		characterPlayer.getCharacteristic(CharacteristicName.WILL).setValue(7);
 		characterPlayer.getCharacteristic(CharacteristicName.FAITH).setValue(4);
 
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("vigor",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 7);
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 8);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("observe",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 5);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("influence",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 4);
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 5);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("throwing",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 3);
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 6);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("sneak",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 3);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("factionLore",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 4);
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 6);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("planetaryLore",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 4);
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 3);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("phoenixEmpireLore",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 4);
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 5);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("fight",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 8);
 
+		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("computing",
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 2);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("athletics",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 5);
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 6);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("landcarft",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 4);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("investigation",
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 5);
+		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("search",
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 5);
+		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("demolitions",
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 2);
+		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("melee",
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 2);
+		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("selfControl",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 4);
 
 		characterPlayer.addBlessing(BlessingFactory.getInstance().getElement("tall", characterPlayer.getLanguage(),
@@ -399,6 +437,9 @@ public class CustomCharacters {
 
 		System.out.println("SportGirl " + CostCalculator.getCost(characterPlayer) + " de "
 				+ FreeStyleCharacterCreation.getFreeAvailablePoints(characterPlayer.getInfo().getAge()));
+		
+		Assert.assertEquals(CostCalculator.getCost(characterPlayer),
+				FreeStyleCharacterCreation.getFreeAvailablePoints(characterPlayer.getInfo().getAge()));
 
 		// Finalize the character.
 		final RandomizeCharacter randomizeCharacter = new RandomizeCharacter(characterPlayer, 0,
@@ -431,17 +472,17 @@ public class CustomCharacters {
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()));
 
 		characterPlayer.getCharacteristic(CharacteristicName.STRENGTH).setValue(6);
-		characterPlayer.getCharacteristic(CharacteristicName.DEXTERITY).setValue(7);
-		characterPlayer.getCharacteristic(CharacteristicName.ENDURANCE).setValue(7);
+		characterPlayer.getCharacteristic(CharacteristicName.DEXTERITY).setValue(8);
+		characterPlayer.getCharacteristic(CharacteristicName.ENDURANCE).setValue(6);
 		characterPlayer.getCharacteristic(CharacteristicName.WITS).setValue(6);
 		characterPlayer.getCharacteristic(CharacteristicName.PERCEPTION).setValue(7);
 		characterPlayer.getCharacteristic(CharacteristicName.TECH).setValue(4);
-		characterPlayer.getCharacteristic(CharacteristicName.PRESENCE).setValue(7);
+		characterPlayer.getCharacteristic(CharacteristicName.PRESENCE).setValue(6);
 		characterPlayer.getCharacteristic(CharacteristicName.WILL).setValue(6);
 		characterPlayer.getCharacteristic(CharacteristicName.FAITH).setValue(5);
 
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("vigor",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 6);
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 7);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("observe",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 7);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("influence",
@@ -451,7 +492,7 @@ public class CustomCharacters {
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("sneak",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 5);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("factionLore",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 4);
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 5);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("planetaryLore",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 4);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("phoenixEmpireLore",
@@ -462,15 +503,15 @@ public class CustomCharacters {
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 6);
 
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("lore", "drugs",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 5);
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 6);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("lore", "poisons",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 1);
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 3);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("landcarft",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 6);
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 8);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("mechanics",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 6);
-		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("investigation",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 2);
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 8);
+		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("search",
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 4);
 
 		characterPlayer.addBlessing(BlessingFactory.getInstance().getElement("crackPilot",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()));
@@ -484,6 +525,9 @@ public class CustomCharacters {
 
 		System.out.println("BandGirl " + CostCalculator.getCost(characterPlayer) + " de "
 				+ FreeStyleCharacterCreation.getFreeAvailablePoints(characterPlayer.getInfo().getAge()));
+		
+		Assert.assertEquals(CostCalculator.getCost(characterPlayer),
+				FreeStyleCharacterCreation.getFreeAvailablePoints(characterPlayer.getInfo().getAge()));
 
 		// Finalize the character.
 		final RandomizeCharacter randomizeCharacter = new RandomizeCharacter(characterPlayer, 0,
@@ -517,7 +561,7 @@ public class CustomCharacters {
 
 		characterPlayer.getCharacteristic(CharacteristicName.STRENGTH).setValue(5);
 		characterPlayer.getCharacteristic(CharacteristicName.DEXTERITY).setValue(6);
-		characterPlayer.getCharacteristic(CharacteristicName.ENDURANCE).setValue(5);
+		characterPlayer.getCharacteristic(CharacteristicName.ENDURANCE).setValue(6);
 		characterPlayer.getCharacteristic(CharacteristicName.WITS).setValue(7);
 		characterPlayer.getCharacteristic(CharacteristicName.PERCEPTION).setValue(6);
 		characterPlayer.getCharacteristic(CharacteristicName.TECH).setValue(5);
@@ -528,7 +572,7 @@ public class CustomCharacters {
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("vigor",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 6);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("observe",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 3);
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 5);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("influence",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 4);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("throwing",
@@ -536,26 +580,30 @@ public class CustomCharacters {
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("sneak",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 5);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("factionLore",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 4);
-		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("planetaryLore",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 4);
-		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("phoenixEmpireLore",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 4);
-		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("fight",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 6);
+		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("planetaryLore",
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 5);
+		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("phoenixEmpireLore",
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 6);
+		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("fight",
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 3);
 
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("computing",
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 4);
+		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("bureaucracy",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 2);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("landcarft",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 3);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("ride",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 4);
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 5);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("lore", "beastsLore",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 8);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("medicine",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 5);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("biology",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 6);
+		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("socialScience",
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 2);
 
 		characterPlayer.addBlessing(BlessingFactory.getInstance().getElement("tall", characterPlayer.getLanguage(),
 				characterPlayer.getModuleName()));
@@ -566,6 +614,9 @@ public class CustomCharacters {
 
 		System.out.println("Vet " + CostCalculator.getCost(characterPlayer) + " de "
 				+ FreeStyleCharacterCreation.getFreeAvailablePoints(characterPlayer.getInfo().getAge()));
+
+		Assert.assertEquals(CostCalculator.getCost(characterPlayer),
+				FreeStyleCharacterCreation.getFreeAvailablePoints(characterPlayer.getInfo().getAge()));
 
 		// Finalize the character.
 		final RandomizeCharacter randomizeCharacter = new RandomizeCharacter(characterPlayer, 0,
@@ -598,10 +649,10 @@ public class CustomCharacters {
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()));
 
 		characterPlayer.getCharacteristic(CharacteristicName.STRENGTH).setValue(5);
-		characterPlayer.getCharacteristic(CharacteristicName.DEXTERITY).setValue(6);
+		characterPlayer.getCharacteristic(CharacteristicName.DEXTERITY).setValue(7);
 		characterPlayer.getCharacteristic(CharacteristicName.ENDURANCE).setValue(5);
 		characterPlayer.getCharacteristic(CharacteristicName.WITS).setValue(7);
-		characterPlayer.getCharacteristic(CharacteristicName.PERCEPTION).setValue(7);
+		characterPlayer.getCharacteristic(CharacteristicName.PERCEPTION).setValue(8);
 		characterPlayer.getCharacteristic(CharacteristicName.TECH).setValue(6);
 		characterPlayer.getCharacteristic(CharacteristicName.PRESENCE).setValue(4);
 		characterPlayer.getCharacteristic(CharacteristicName.WILL).setValue(6);
@@ -610,7 +661,7 @@ public class CustomCharacters {
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("vigor",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 5);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("observe",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 4);
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 7);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("influence",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 3);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("throwing",
@@ -618,26 +669,28 @@ public class CustomCharacters {
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("sneak",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 5);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("factionLore",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 4);
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 5);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("planetaryLore",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 4);
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 5);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("phoenixEmpireLore",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 4);
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 6);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("fight",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 6);
 
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("lore", "undead",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 4);
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 6);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("lore", "demons",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 4);
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 5);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("lore", "fairies",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 4);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("lore", "weaponsLore",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 2);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("computing",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 4);
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 3);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("disguise",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 2);
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 4);
+		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("search",
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 7);
 
 		characterPlayer.addBlessing(BlessingFactory.getInstance().getElement("curious", characterPlayer.getLanguage(),
 				characterPlayer.getModuleName()));
@@ -655,6 +708,9 @@ public class CustomCharacters {
 
 		System.out.println("Nerd " + CostCalculator.getCost(characterPlayer) + " de "
 				+ FreeStyleCharacterCreation.getFreeAvailablePoints(characterPlayer.getInfo().getAge()));
+		
+		Assert.assertEquals(CostCalculator.getCost(characterPlayer),
+				FreeStyleCharacterCreation.getFreeAvailablePoints(characterPlayer.getInfo().getAge()));
 
 		// Finalize the character.
 		final RandomizeCharacter randomizeCharacter = new RandomizeCharacter(characterPlayer, 0,
@@ -692,7 +748,7 @@ public class CustomCharacters {
 		characterPlayer.getCharacteristic(CharacteristicName.WITS).setValue(7);
 		characterPlayer.getCharacteristic(CharacteristicName.PERCEPTION).setValue(6);
 		characterPlayer.getCharacteristic(CharacteristicName.TECH).setValue(5);
-		characterPlayer.getCharacteristic(CharacteristicName.PRESENCE).setValue(5);
+		characterPlayer.getCharacteristic(CharacteristicName.PRESENCE).setValue(8);
 		characterPlayer.getCharacteristic(CharacteristicName.WILL).setValue(6);
 		characterPlayer.getCharacteristic(CharacteristicName.FAITH).setValue(4);
 
@@ -707,13 +763,13 @@ public class CustomCharacters {
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("sneak",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 5);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("factionLore",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 5);
-		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("planetaryLore",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 5);
-		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("phoenixEmpireLore",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 7);
-		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("fight",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 6);
+		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("planetaryLore",
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 6);
+		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("phoenixEmpireLore",
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 6);
+		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("fight",
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 5);
 
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("computing",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 3);
@@ -724,9 +780,13 @@ public class CustomCharacters {
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("chemistry",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 4);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("biology",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 4);
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 3);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("etiquette",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 5);
+		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("empathy",
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 6);
+		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("knavery",
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 4);
 
 		characterPlayer.addBlessing(BlessingFactory.getInstance().getElement("handsome", characterPlayer.getLanguage(),
 				characterPlayer.getModuleName()));
@@ -744,16 +804,19 @@ public class CustomCharacters {
 
 		System.out.println("Teacher " + CostCalculator.getCost(characterPlayer) + " de "
 				+ FreeStyleCharacterCreation.getFreeAvailablePoints(characterPlayer.getInfo().getAge()));
+		
+		Assert.assertEquals(CostCalculator.getCost(characterPlayer),
+				FreeStyleCharacterCreation.getFreeAvailablePoints(characterPlayer.getInfo().getAge()));
 
 		// Finalize the character.
 		final RandomizeCharacter randomizeCharacter = new RandomizeCharacter(characterPlayer, 0,
 				CombatPreferences.PEACEFUL);
 		randomizeCharacter.createCharacter();
 
-		String description = characterPlayer.getCompleteNameRepresentation() + "";
-		String background = "";
-		String specialRules = "";
-		String secondaryObjectives = "";
+		String description = characterPlayer.getCompleteNameRepresentation() + " es un hombre con buena presencia y saber vestir. Trabaja como profesor de instituto y hace gala de conocimientos en varias materias. Tiene algo que le hace especial, la gente le respeta como profesional y los que le conocen le tratan bien sin saber por qué. Es una persona con carisma y buena presencia, y resulta evidente que incluso en las situaciones más complicadas, cae en gracia a las mujeres.";
+		String background = "Durante estos últimos días, has burlado el toque de queda para visitar a una de tus alumnas con las que tienes una relación especial (y algo prohíbida). Debido a tus andanzas nocturnas fuiste detenido hace dos noches por una mujer soldado, si bien pudiste convencerla de que te dejara ir. Durante las pocas horas de duró tu captura, lograste escuchar una conversación por radio en la que quedaba evidente que el ejército estaba reagrupándose en el Parque Tecnológico de la ciudad y se estaban fortificando allí para poder contener algún tipo de extraño peligro.";
+		String specialRules = "Siempres que trates con alguien del sexo opuesto, tiene una dificultad de -4 a cualquier tirada que sea para oponerse a una acción contra ti. Esta penalización únicamente se aplica a aquellas mujeres que no tengan una mala relación contigo.";
+		String secondaryObjectives = "Tu aspecto y tu presencia son lo más importante para ti. No pudes bajo ningún concepto permitir que este se vea perjudicado, y si fuera el caso, deberás hacer todo lo posible para que tu aspecto sea siempre impecable. No importa lo que cueste o lo que tengas que hacer. No importa lo que cueste o lo que tengas que hacer. No permitirás quedarte en una situación que perjudique tu imagen. ";
 
 		setDescription(characterPlayer, description, background, specialRules, secondaryObjectives);
 
@@ -777,11 +840,11 @@ public class CustomCharacters {
 		characterPlayer.getCharacteristic(CharacteristicName.STRENGTH).setValue(5);
 		characterPlayer.getCharacteristic(CharacteristicName.DEXTERITY).setValue(8);
 		characterPlayer.getCharacteristic(CharacteristicName.ENDURANCE).setValue(5);
-		characterPlayer.getCharacteristic(CharacteristicName.WITS).setValue(6);
+		characterPlayer.getCharacteristic(CharacteristicName.WITS).setValue(7);
 		characterPlayer.getCharacteristic(CharacteristicName.PERCEPTION).setValue(6);
 		characterPlayer.getCharacteristic(CharacteristicName.TECH).setValue(4);
-		characterPlayer.getCharacteristic(CharacteristicName.PRESENCE).setValue(5);
-		characterPlayer.getCharacteristic(CharacteristicName.WILL).setValue(5);
+		characterPlayer.getCharacteristic(CharacteristicName.PRESENCE).setValue(6);
+		characterPlayer.getCharacteristic(CharacteristicName.WILL).setValue(6);
 		characterPlayer.getCharacteristic(CharacteristicName.FAITH).setValue(4);
 
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("vigor",
@@ -791,13 +854,13 @@ public class CustomCharacters {
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("influence",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 7);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("throwing",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 3);
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 4);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("sneak",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 6);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("factionLore",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 3);
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 4);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("planetaryLore",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 3);
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 4);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("phoenixEmpireLore",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 4);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("fight",
@@ -817,6 +880,10 @@ public class CustomCharacters {
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 3);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("empathy",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 5);
+		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("search",
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 4);
+		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("melee",
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 4);
 
 		characterPlayer.addBlessing(BlessingFactory.getInstance().getElement("eloquent", characterPlayer.getLanguage(),
 				characterPlayer.getModuleName()));
@@ -826,6 +893,9 @@ public class CustomCharacters {
 
 		System.out.println("Cartomancer " + CostCalculator.getCost(characterPlayer) + " de "
 				+ FreeStyleCharacterCreation.getFreeAvailablePoints(characterPlayer.getInfo().getAge()));
+		
+		Assert.assertEquals(CostCalculator.getCost(characterPlayer),
+				FreeStyleCharacterCreation.getFreeAvailablePoints(characterPlayer.getInfo().getAge()));
 
 		// Finalize the character.
 		final RandomizeCharacter randomizeCharacter = new RandomizeCharacter(characterPlayer, 0,
@@ -868,9 +938,9 @@ public class CustomCharacters {
 		characterPlayer.getCharacteristic(CharacteristicName.WITS).setValue(7);
 		characterPlayer.getCharacteristic(CharacteristicName.PERCEPTION).setValue(6);
 		characterPlayer.getCharacteristic(CharacteristicName.TECH).setValue(4);
-		characterPlayer.getCharacteristic(CharacteristicName.PRESENCE).setValue(8);
-		characterPlayer.getCharacteristic(CharacteristicName.WILL).setValue(5);
-		characterPlayer.getCharacteristic(CharacteristicName.FAITH).setValue(4);
+		characterPlayer.getCharacteristic(CharacteristicName.PRESENCE).setValue(7);
+		characterPlayer.getCharacteristic(CharacteristicName.WILL).setValue(6);
+		characterPlayer.getCharacteristic(CharacteristicName.FAITH).setValue(5);
 
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("vigor",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 5);
@@ -879,33 +949,39 @@ public class CustomCharacters {
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("influence",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 8);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("throwing",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 3);
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 6);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("sneak",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 3);
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 8);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("factionLore",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 3);
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 5);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("planetaryLore",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 3);
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 5);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("phoenixEmpireLore",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 4);
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 5);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("fight",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 3);
-		
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 6);
+
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("melee",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 2);
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 4);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("empathy",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 2);
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 4);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("archery",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 2);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("arts", "music",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 4);
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 6);
+		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("arts", "drawing",
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 1);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("disguise",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 4);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("performance",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 8);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("etiquette",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 4);
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 6);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("leadership",
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 6);
+		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("performance",
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 8);
+		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("gaming",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 3);
 
 		characterPlayer.addBenefice(AvailableBeneficeFactory.getInstance().getElement("cash [euros5000]",
@@ -917,6 +993,9 @@ public class CustomCharacters {
 
 		System.out.println("Dwarf " + CostCalculator.getCost(characterPlayer) + " de "
 				+ FreeStyleCharacterCreation.getFreeAvailablePoints(characterPlayer.getInfo().getAge()));
+		
+		Assert.assertEquals(CostCalculator.getCost(characterPlayer),
+				FreeStyleCharacterCreation.getFreeAvailablePoints(characterPlayer.getInfo().getAge()));
 
 		// Finalize the character.
 		final RandomizeCharacter randomizeCharacter = new RandomizeCharacter(characterPlayer, 0,

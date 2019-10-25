@@ -433,6 +433,20 @@
 		</name>
 		<group>physical</group>
 	</survival>
+	<tracking>
+		<name>
+			<en>Tracking</en>
+			<es>Rastrear</es>
+		</name>
+		<group>physical</group>
+	</tracking>
+	<search>
+		<name>
+			<en>Search</en>
+			<es>Buscar</es>
+		</name>
+		<group>analytical</group>
+	</search>
 	<lore>
 		<name>
 			<en>Lore</en>
