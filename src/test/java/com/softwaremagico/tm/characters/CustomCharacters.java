@@ -18,6 +18,8 @@ package com.softwaremagico.tm.characters;
 import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
+import java.util.HashSet;
+import java.util.Set;
 
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -29,8 +31,10 @@ import com.softwaremagico.tm.InvalidXmlElementException;
 import com.softwaremagico.tm.character.CharacterPlayer;
 import com.softwaremagico.tm.character.Gender;
 import com.softwaremagico.tm.character.Name;
-import com.softwaremagico.tm.character.RandomizeCharacter;
+import com.softwaremagico.tm.character.RandomName;
+import com.softwaremagico.tm.character.RandomSurname;
 import com.softwaremagico.tm.character.Surname;
+import com.softwaremagico.tm.character.benefices.AvailableBenefice;
 import com.softwaremagico.tm.character.benefices.AvailableBeneficeFactory;
 import com.softwaremagico.tm.character.benefices.BeneficeAlreadyAddedException;
 import com.softwaremagico.tm.character.blessings.BlessingAlreadyAddedException;
@@ -50,7 +54,8 @@ import com.softwaremagico.tm.pdf.complete.PartySheet;
 import com.softwaremagico.tm.pdf.small.SmallPartySheet;
 import com.softwaremagico.tm.random.exceptions.DuplicatedPreferenceException;
 import com.softwaremagico.tm.random.exceptions.InvalidRandomElementSelectedException;
-import com.softwaremagico.tm.random.selectors.CombatPreferences;
+import com.softwaremagico.tm.random.selectors.IRandomPreference;
+import com.softwaremagico.tm.random.selectors.NamesPreferences;
 
 @Test(groups = "customCharacters")
 public class CustomCharacters {
@@ -60,10 +65,34 @@ public class CustomCharacters {
 	private Party party;
 
 	private void setDescription(CharacterPlayer characterPlayer, String description, String background,
-			String specialRules, String secondaryObjectives) {
+			String specialRules, String secondaryObjectives) throws InvalidXmlElementException {
+
+		String benefices = "";
+		if (!characterPlayer.getAllBenefices().isEmpty()) {
+			benefices = "\n\nBeneficios:\n";
+			for (AvailableBenefice benefice : characterPlayer.getAllBenefices()) {
+				benefices += "\t- " + benefice.getName() + "\n";
+			}
+		}
+
 		characterPlayer.getInfo().setCharacterDescription(description);
 		characterPlayer.getInfo().setBackgroundDecription(background + "\n\nReglas Especiales: " + specialRules
-				+ "\n\nObjetivo Secundario: " + secondaryObjectives);
+				+ "\n\nObjetivo Secundario: " + secondaryObjectives + benefices);
+	}
+
+	private void setNames(CharacterPlayer characterPlayer)
+			throws InvalidXmlElementException, InvalidRandomElementSelectedException {
+		Set<IRandomPreference> preferences = new HashSet<>();
+		preferences.add(NamesPreferences.LOW);
+		if (characterPlayer.getInfo().getNames() == null || characterPlayer.getInfo().getNames().isEmpty()) {
+			final RandomName randomName = new RandomName(characterPlayer, preferences);
+			randomName.assign();
+		}
+
+		if (characterPlayer.getInfo().getSurname() == null) {
+			final RandomSurname randomSurname = new RandomSurname(characterPlayer, preferences);
+			randomSurname.assign();
+		}
 	}
 
 	@BeforeClass
@@ -144,14 +173,11 @@ public class CustomCharacters {
 
 		System.out.println("Geek " + CostCalculator.getCost(characterPlayer) + " de "
 				+ FreeStyleCharacterCreation.getFreeAvailablePoints(characterPlayer.getInfo().getAge()));
-		
+
 		Assert.assertEquals(CostCalculator.getCost(characterPlayer),
 				FreeStyleCharacterCreation.getFreeAvailablePoints(characterPlayer.getInfo().getAge()));
 
-		// Finalize the character.
-		final RandomizeCharacter randomizeCharacter = new RandomizeCharacter(characterPlayer, 0,
-				CombatPreferences.PEACEFUL);
-		randomizeCharacter.createCharacter();
+		setNames(characterPlayer);
 
 		String description = characterPlayer.getCompleteNameRepresentation()
 				+ " viste con pantalones cortos, una camiseta de algún grupo de rock olvidado y una gorra del viejo y nostálgico Space Invaders. Se dedica profesionalmente a la seguridad informática y aunque no lo dice, por la seguridad con la que habla hace evidente que es bueno en ello. Ha trabajado para multiples empresas muy conocidas del sector, pero actualmente se ha hecho autónomo y tiene una empresa propia localizada en un sótano de la ciudad que llama «El Búnker». ";
@@ -191,7 +217,7 @@ public class CustomCharacters {
 		characterPlayer.getCharacteristic(CharacteristicName.FAITH).setValue(6);
 
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("vigor",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 6);
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 7);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("observe",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 5);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("influence",
@@ -216,7 +242,7 @@ public class CustomCharacters {
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("lore", "weaponsLore",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 6);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("warfare",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 5);
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 4);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("mechanics",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 4);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("slugGuns",
@@ -250,14 +276,11 @@ public class CustomCharacters {
 
 		System.out.println("Bill " + CostCalculator.getCost(characterPlayer) + " de "
 				+ FreeStyleCharacterCreation.getFreeAvailablePoints(characterPlayer.getInfo().getAge()));
-		
+
 		Assert.assertEquals(CostCalculator.getCost(characterPlayer),
 				FreeStyleCharacterCreation.getFreeAvailablePoints(characterPlayer.getInfo().getAge()));
 
-		// Finalize the character.
-		final RandomizeCharacter randomizeCharacter = new RandomizeCharacter(characterPlayer, 0,
-				CombatPreferences.BELLIGERENT);
-		randomizeCharacter.createCharacter();
+		setNames(characterPlayer);
 
 		String description = characterPlayer.getCompleteNameRepresentation()
 				+ " es un piloto de guerra ya retirado. En sus buenos tiempos, fue capitán de un gran bombardero de cuatro motores capaz de llevar cientos de toneladas de destrucción. Aunque le gusta jactarse de su formación militar, nunca ha vivido tiempos de guerra y por tanto, su experiencia se basa en maniobras de combates y simuladores virtuales. Después de muchas horas de preparación, su carrerá se vio truncada debido a un un accidente en unas maniobras. En dicho accidente perdió una pierna, lo que le obligó a retirarse. A pesar de su edad, tiene una forma física envidiable, únicamente mermada por su afición a los puros. ";
@@ -350,14 +373,11 @@ public class CustomCharacters {
 
 		System.out.println("Pious " + CostCalculator.getCost(characterPlayer) + " de "
 				+ FreeStyleCharacterCreation.getFreeAvailablePoints(characterPlayer.getInfo().getAge()));
-		
+
 		Assert.assertEquals(CostCalculator.getCost(characterPlayer),
 				FreeStyleCharacterCreation.getFreeAvailablePoints(characterPlayer.getInfo().getAge()));
 
-		// Finalize the character.
-		final RandomizeCharacter randomizeCharacter = new RandomizeCharacter(characterPlayer, 0,
-				CombatPreferences.PEACEFUL);
-		randomizeCharacter.createCharacter();
+		setNames(characterPlayer);
 
 		String description = characterPlayer.getCompleteNameRepresentation()
 				+ " es una persona devota y de las que coloca la religión como el centro de todo lo que hace. La religión le permite prácticamente justificar todos lo que ocurre a su alrededor, por lo que no necesita nada más. Tiene una vida serena y tranquila debido a ello. Ha visto -o cree haber visto- milagros delante suyo, lo que le demuestra que El Hacedor está siempre con ella y que todo tiene un plan divino. ";
@@ -437,14 +457,11 @@ public class CustomCharacters {
 
 		System.out.println("SportGirl " + CostCalculator.getCost(characterPlayer) + " de "
 				+ FreeStyleCharacterCreation.getFreeAvailablePoints(characterPlayer.getInfo().getAge()));
-		
+
 		Assert.assertEquals(CostCalculator.getCost(characterPlayer),
 				FreeStyleCharacterCreation.getFreeAvailablePoints(characterPlayer.getInfo().getAge()));
 
-		// Finalize the character.
-		final RandomizeCharacter randomizeCharacter = new RandomizeCharacter(characterPlayer, 0,
-				CombatPreferences.PEACEFUL);
-		randomizeCharacter.createCharacter();
+		setNames(characterPlayer);
 
 		String description = characterPlayer.getCompleteNameRepresentation()
 				+ " es una boxeadora profesional de la vieja Rusia. Ganadora de una medalla de plata en las olimpiadas de Budapest 2036. Tiene una altura y corpulencia anormal para su género, lo que le convierte una boxeadora temible. Por desgracia, no tiene la misma soltura fuera del ring que dentro de este, lo que hace pensar que eres algo patosa. ";
@@ -525,14 +542,11 @@ public class CustomCharacters {
 
 		System.out.println("BandGirl " + CostCalculator.getCost(characterPlayer) + " de "
 				+ FreeStyleCharacterCreation.getFreeAvailablePoints(characterPlayer.getInfo().getAge()));
-		
+
 		Assert.assertEquals(CostCalculator.getCost(characterPlayer),
 				FreeStyleCharacterCreation.getFreeAvailablePoints(characterPlayer.getInfo().getAge()));
 
-		// Finalize the character.
-		final RandomizeCharacter randomizeCharacter = new RandomizeCharacter(characterPlayer, 0,
-				CombatPreferences.PEACEFUL);
-		randomizeCharacter.createCharacter();
+		setNames(characterPlayer);
 
 		String description = characterPlayer.getCompleteNameRepresentation()
 				+ " es una amante de los coches, los motores y su velocidad. Se mueve en un mundo de carreras, apuestas y diversión. Cuando no está corriendo, pasa el tiempo ayudando a su familia en un taller mecánico, profesión que se le da bien y que le ha proporcionado una interesante cantidad de dinero. ";
@@ -618,10 +632,7 @@ public class CustomCharacters {
 		Assert.assertEquals(CostCalculator.getCost(characterPlayer),
 				FreeStyleCharacterCreation.getFreeAvailablePoints(characterPlayer.getInfo().getAge()));
 
-		// Finalize the character.
-		final RandomizeCharacter randomizeCharacter = new RandomizeCharacter(characterPlayer, 0,
-				CombatPreferences.PEACEFUL);
-		randomizeCharacter.createCharacter();
+		setNames(characterPlayer);
 
 		String description = "A " + characterPlayer.getCompleteNameRepresentation()
 				+ " le gustó desde siempre la medicina, si bien finalmente optó con ser veterinaria. Como amante de los animales vive con varios de ellos en su casa. Tiene una colección de gatos, lagartos y aves exóticas que convierten su casa en un auténtico circo. Se te da bien tu profesión, y casi prefieres la vida de un animal sobre la de una persona. ";
@@ -708,14 +719,11 @@ public class CustomCharacters {
 
 		System.out.println("Nerd " + CostCalculator.getCost(characterPlayer) + " de "
 				+ FreeStyleCharacterCreation.getFreeAvailablePoints(characterPlayer.getInfo().getAge()));
-		
+
 		Assert.assertEquals(CostCalculator.getCost(characterPlayer),
 				FreeStyleCharacterCreation.getFreeAvailablePoints(characterPlayer.getInfo().getAge()));
 
-		// Finalize the character.
-		final RandomizeCharacter randomizeCharacter = new RandomizeCharacter(characterPlayer, 0,
-				CombatPreferences.PEACEFUL);
-		randomizeCharacter.createCharacter();
+		setNames(characterPlayer);
 
 		String description = characterPlayer.getCompleteNameRepresentation()
 				+ " es un joven amante de los juegos de rol. Lo que le hace ver lo que está ocurriendo de una forma distinta. Gracias a las horas inmersas jugando al D&D 6rd Edition es capaz de ver lo que ha pasado con otros ojos. Para él, esto no es más que otra aventura como las que ya ha vivido entre papeles y lápices.";
@@ -804,16 +812,14 @@ public class CustomCharacters {
 
 		System.out.println("Teacher " + CostCalculator.getCost(characterPlayer) + " de "
 				+ FreeStyleCharacterCreation.getFreeAvailablePoints(characterPlayer.getInfo().getAge()));
-		
+
 		Assert.assertEquals(CostCalculator.getCost(characterPlayer),
 				FreeStyleCharacterCreation.getFreeAvailablePoints(characterPlayer.getInfo().getAge()));
 
-		// Finalize the character.
-		final RandomizeCharacter randomizeCharacter = new RandomizeCharacter(characterPlayer, 0,
-				CombatPreferences.PEACEFUL);
-		randomizeCharacter.createCharacter();
+		setNames(characterPlayer);
 
-		String description = characterPlayer.getCompleteNameRepresentation() + " es un hombre con buena presencia y saber vestir. Trabaja como profesor de instituto y hace gala de conocimientos en varias materias. Tiene algo que le hace especial, la gente le respeta como profesional y los que le conocen le tratan bien sin saber por qué. Es una persona con carisma y buena presencia, y resulta evidente que incluso en las situaciones más complicadas, cae en gracia a las mujeres.";
+		String description = characterPlayer.getCompleteNameRepresentation()
+				+ " es un hombre con buena presencia y saber vestir. Trabaja como profesor de instituto y hace gala de conocimientos en varias materias. Tiene algo que le hace especial, la gente le respeta como profesional y los que le conocen le tratan bien sin saber por qué. Es una persona con carisma y buena presencia, y resulta evidente que incluso en las situaciones más complicadas, cae en gracia a las mujeres.";
 		String background = "Durante estos últimos días, has burlado el toque de queda para visitar a una de tus alumnas con las que tienes una relación especial (y algo prohíbida). Debido a tus andanzas nocturnas fuiste detenido hace dos noches por una mujer soldado, si bien pudiste convencerla de que te dejara ir. Durante las pocas horas de duró tu captura, lograste escuchar una conversación por radio en la que quedaba evidente que el ejército estaba reagrupándose en el Parque Tecnológico de la ciudad y se estaban fortificando allí para poder contener algún tipo de extraño peligro.";
 		String specialRules = "Siempres que trates con alguien del sexo opuesto, tiene una dificultad de -4 a cualquier tirada que sea para oponerse a una acción contra ti. Esta penalización únicamente se aplica a aquellas mujeres que no tengan una mala relación contigo.";
 		String secondaryObjectives = "Tu aspecto y tu presencia son lo más importante para ti. No pudes bajo ningún concepto permitir que este se vea perjudicado, y si fuera el caso, deberás hacer todo lo posible para que tu aspecto sea siempre impecable. No importa lo que cueste o lo que tengas que hacer. No importa lo que cueste o lo que tengas que hacer. No permitirás quedarte en una situación que perjudique tu imagen. ";
@@ -893,14 +899,11 @@ public class CustomCharacters {
 
 		System.out.println("Cartomancer " + CostCalculator.getCost(characterPlayer) + " de "
 				+ FreeStyleCharacterCreation.getFreeAvailablePoints(characterPlayer.getInfo().getAge()));
-		
+
 		Assert.assertEquals(CostCalculator.getCost(characterPlayer),
 				FreeStyleCharacterCreation.getFreeAvailablePoints(characterPlayer.getInfo().getAge()));
 
-		// Finalize the character.
-		final RandomizeCharacter randomizeCharacter = new RandomizeCharacter(characterPlayer, 0,
-				CombatPreferences.PEACEFUL);
-		randomizeCharacter.createCharacter();
+		setNames(characterPlayer);
 
 		String description = characterPlayer.getCompleteNameRepresentation()
 				+ " es una mujer algo entrada en años que se gana la vida prediciendo el futuro con las cartas. Ha viajado de una parte a otra del mundo con sus artes y dice que ha ayudado a grandes estrellas de Hollywood para llegar hasta lo más alto gracias a sus dotes adivinatorios. Lleva numerosas pulseras y collares con multitud de piedras preciosas y semipreciosas.";
@@ -993,14 +996,11 @@ public class CustomCharacters {
 
 		System.out.println("Dwarf " + CostCalculator.getCost(characterPlayer) + " de "
 				+ FreeStyleCharacterCreation.getFreeAvailablePoints(characterPlayer.getInfo().getAge()));
-		
+
 		Assert.assertEquals(CostCalculator.getCost(characterPlayer),
 				FreeStyleCharacterCreation.getFreeAvailablePoints(characterPlayer.getInfo().getAge()));
 
-		// Finalize the character.
-		final RandomizeCharacter randomizeCharacter = new RandomizeCharacter(characterPlayer, 0,
-				CombatPreferences.PEACEFUL);
-		randomizeCharacter.createCharacter();
+		setNames(characterPlayer);
 
 		String description = characterPlayer.getCompleteNameRepresentation()
 				+ " es un actor que antaño tuvo un gran éxito por participar en varias películas y series con un gran éxito. Ya retirado debido a su edad de 78 años, se compró una casita en las afueras de Habitax para vivir lejos de la fama y del ruido de Hollywood. Lo que no esperaba, que su tranquilidad se volviera en tragedia. ";
