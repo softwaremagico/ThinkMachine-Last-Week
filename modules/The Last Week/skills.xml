@@ -440,13 +440,6 @@
 		</name>
 		<group>physical</group>
 	</tracking>
-	<search>
-		<name>
-			<en>Search</en>
-			<es>Buscar</es>
-		</name>
-		<group>analytical</group>
-	</search>
 	<lore>
 		<name>
 			<en>Lore</en>

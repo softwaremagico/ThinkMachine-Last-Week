@@ -156,7 +156,7 @@ public class CustomCharacters {
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 4);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("bureaucracy",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 5);
-		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("search",
+		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("investigation",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 4);
 
 		characterPlayer.addBlessing(BlessingFactory.getInstance().getElement("hacker", characterPlayer.getLanguage(),
@@ -354,7 +354,7 @@ public class CustomCharacters {
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 2);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("empathy",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 7);
-		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("search",
+		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("investigation",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 3);
 
 		characterPlayer.addBlessing(BlessingFactory.getInstance().getElement("disciplined",
@@ -433,22 +433,18 @@ public class CustomCharacters {
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("fight",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 8);
 
-		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("computing",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 2);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("athletics",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 6);
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 7);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("landcarft",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 4);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("investigation",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 5);
-		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("search",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 5);
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 6);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("demolitions",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 2);
-		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("melee",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 2);
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 4);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("selfControl",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 4);
+		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("slugGuns",
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 5);
 
 		characterPlayer.addBlessing(BlessingFactory.getInstance().getElement("tall", characterPlayer.getLanguage(),
 				characterPlayer.getModuleName()));
@@ -527,7 +523,7 @@ public class CustomCharacters {
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 8);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("mechanics",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 8);
-		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("search",
+		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("slugGuns",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 4);
 
 		characterPlayer.addBlessing(BlessingFactory.getInstance().getElement("crackPilot",
@@ -697,11 +693,13 @@ public class CustomCharacters {
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("lore", "weaponsLore",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 2);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("computing",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 3);
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 4);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("disguise",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 4);
-		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("search",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 7);
+		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("investigation",
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 3);
+		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("slugGuns",
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 3);
 
 		characterPlayer.addBlessing(BlessingFactory.getInstance().getElement("curious", characterPlayer.getLanguage(),
 				characterPlayer.getModuleName()));
@@ -726,7 +724,7 @@ public class CustomCharacters {
 		setNames(characterPlayer);
 
 		String description = characterPlayer.getCompleteNameRepresentation()
-				+ " es un joven amante de los juegos de rol. Lo que le hace ver lo que está ocurriendo de una forma distinta. Gracias a las horas inmersas jugando al D&D 6rd Edition es capaz de ver lo que ha pasado con otros ojos. Para él, esto no es más que otra aventura como las que ya ha vivido entre papeles y lápices.";
+				+ " es un joven amante de los juegos de rol. Lo que le hace ver lo que está ocurriendo de una forma distinta. Gracias a las horas inmersas jugando al D&D 6rd Edition es capaz de ver lo que ha pasado con otros ojos. Para él, esto no es más que otra aventura como las que ya ha vivido entre papeles y lápices, que además permitirá probar tu amor por las armas.";
 		String background = "Como estudiante en una ciudad sin familia te has visto enclaustrado y solo en tu miserable piso de alquiler. Todo lo que has oído se parece mucho a lo que describen tus libros de rol, lo que te ha ayudado en parte a sobrevivir. Cuando esta mañana reventó la puerta de tu casa ese vecino completamente loco y furioso, supiste que tu única salida era usar un cebo. Por lo que saltaste de tu balcón al balcón contiguo de esa pareja de ancianitos que te trataban tan bien. Esperaste escondido en un armario hasta encontrar tu oportunidad. En la oscuridad, encontraste un extraño pendrive de colores blanco, rojo y azul, e instintivamente lo metiste en uno de tus bolsillos ¡Estamos en una película de espías!. Unas horas después la puerta de la casa se abrió y el atacante se distrajo con lo que parecía una persona bastante corpulenta, lo que te permitió escabullirte sin ser visto, y para cuando pudiste escapar del edificio, un autobús te estaba esperando rodeado de militares.";
 		String specialRules = "Siempre que quieras obtener información sobre una criatura fantástica y puedas consultar alguno de tus libros de rol puedes hacer una tirada de Saber. Según los PV obtenidos el Director de Juego de aportará más o menos información. Únicamente puedes realizar una tirada por pregunta. ";
 		String secondaryObjectives = "Eres el más joven sin duda. Nadie te tiene en cuenta para nada, eres una sombra en el colegio... Esto se va a acabar. Quieres conseguir algo grandioso que te convierta en alguien popular y famoso. Cuantas más cosas logres para ser el centro de atención ¡tanto mejor! Por cierto... ¿qué será ese pendrive que tienes en tu poder?";
@@ -777,7 +775,7 @@ public class CustomCharacters {
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("phoenixEmpireLore",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 6);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("fight",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 5);
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 4);
 
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("computing",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 3);
@@ -790,9 +788,11 @@ public class CustomCharacters {
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("biology",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 3);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("etiquette",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 5);
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 3);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("empathy",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 6);
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 5);
+		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("melee",
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 4);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("knavery",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 4);
 
@@ -819,7 +819,7 @@ public class CustomCharacters {
 		setNames(characterPlayer);
 
 		String description = characterPlayer.getCompleteNameRepresentation()
-				+ " es un hombre con buena presencia y saber vestir. Trabaja como profesor de instituto y hace gala de conocimientos en varias materias. Tiene algo que le hace especial, la gente le respeta como profesional y los que le conocen le tratan bien sin saber por qué. Es una persona con carisma y buena presencia, y resulta evidente que incluso en las situaciones más complicadas, cae en gracia a las mujeres.";
+				+ " es un hombre con buena presencia y saber vestir. Trabaja como profesor de instituto y hace gala de conocimientos en varias materias. Tiene algo que le hace especial, la gente le respeta como profesional y los que le conocen le tratan bien sin saber por qué. Es una persona con carisma y buena presencia, potenciando por su prática regular de esgrima. Gracias a su aspecto físico resulta evidente que incluso en las situaciones más complicadas, cae en gracia a las mujeres.";
 		String background = "Durante estos últimos días, has burlado el toque de queda para visitar a una de tus alumnas con las que tienes una relación especial (y algo prohíbida). Debido a tus andanzas nocturnas fuiste detenido hace dos noches por una mujer soldado, si bien pudiste convencerla de que te dejara ir. Durante las pocas horas de duró tu captura, lograste escuchar una conversación por radio en la que quedaba evidente que el ejército estaba reagrupándose en el Parque Tecnológico de la ciudad y se estaban fortificando allí para poder contener algún tipo de extraño peligro.";
 		String specialRules = "Siempres que trates con alguien del sexo opuesto, tiene una dificultad de -4 a cualquier tirada que sea para oponerse a una acción contra ti. Esta penalización únicamente se aplica a aquellas mujeres que no tengan una mala relación contigo.";
 		String secondaryObjectives = "Tu aspecto y tu presencia son lo más importante para ti. No pudes bajo ningún concepto permitir que este se vea perjudicado, y si fuera el caso, deberás hacer todo lo posible para que tu aspecto sea siempre impecable. No importa lo que cueste o lo que tengas que hacer. No importa lo que cueste o lo que tengas que hacer. No permitirás quedarte en una situación que perjudique tu imagen. ";
@@ -886,7 +886,7 @@ public class CustomCharacters {
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 3);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("empathy",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 5);
-		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("search",
+		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("investigation",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 4);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("melee",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 4);
