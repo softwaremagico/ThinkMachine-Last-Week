@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.softwaremagico</groupId>
 	<artifactId>think-machine-last-week</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<packaging>jar</packaging>
 	<name>Think Machine The Last Week</name>
 	<url>https://github.com/softwaremagico/ThinkMachineLastWeek</url>
@@ -190,3 +190,4 @@
 	</dependencies>
 
 </project>
+
