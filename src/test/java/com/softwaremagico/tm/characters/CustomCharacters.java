@@ -617,6 +617,8 @@ public class CustomCharacters {
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 5);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("biology",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 6);
+		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("chemistry",
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 6);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("socialScience",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 2);
 
@@ -756,7 +758,7 @@ public class CustomCharacters {
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()));
 
 		characterPlayer.getCharacteristic(CharacteristicName.STRENGTH).setValue(6);
-		characterPlayer.getCharacteristic(CharacteristicName.DEXTERITY).setValue(5);
+		characterPlayer.getCharacteristic(CharacteristicName.DEXTERITY).setValue(6);
 		characterPlayer.getCharacteristic(CharacteristicName.ENDURANCE).setValue(6);
 		characterPlayer.getCharacteristic(CharacteristicName.WITS).setValue(7);
 		characterPlayer.getCharacteristic(CharacteristicName.PERCEPTION).setValue(6);

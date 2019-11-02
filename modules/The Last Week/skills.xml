@@ -149,16 +149,6 @@
 			<minTechLevel>2</minTechLevel>
 		</random>
 	</chemistry>
-	<biology>
-		<name>
-			<en>Biology</en>
-			<es>Biología</es>
-		</name>
-		<group>science</group>
-		<random>
-			<minTechLevel>2</minTechLevel>
-		</random>
-	</biology>
 	<slugGuns>
 		<name>
 			<en>Slug Guns</en>
