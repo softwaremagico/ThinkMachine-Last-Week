@@ -606,7 +606,7 @@ public class CustomCharacters {
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("computing",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 4);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("bureaucracy",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 2);
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 3);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("landcarft",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 3);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("ride",
@@ -622,9 +622,9 @@ public class CustomCharacters {
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("socialScience",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 2);
 
-		characterPlayer.addBlessing(BlessingFactory.getInstance().getElement("tall", characterPlayer.getLanguage(),
+		characterPlayer.addBlessing(BlessingFactory.getInstance().getElement("beastmaster", characterPlayer.getLanguage(),
 				characterPlayer.getModuleName()));
-		characterPlayer.addBlessing(BlessingFactory.getInstance().getElement("clumsy", characterPlayer.getLanguage(),
+		characterPlayer.addBlessing(BlessingFactory.getInstance().getElement("thrifty", characterPlayer.getLanguage(),
 				characterPlayer.getModuleName()));
 		characterPlayer.addBenefice(AvailableBeneficeFactory.getInstance().getElement("cash [euros0]",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()));
@@ -639,9 +639,9 @@ public class CustomCharacters {
 
 		String description = "A " + characterPlayer.getCompleteNameRepresentation() + " ("
 				+ characterPlayer.getInfo().getAge() + " años)"
-				+ " le gustó desde siempre la medicina, si bien finalmente optó con ser veterinaria. Hija de inmigrantes del norte de África logró una plaza en una de las más prestigiosas universidades del país. Como amante de los animales vive con varios de ellos en su casa. Tiene una colección de gatos, lagartos y aves exóticas que convierten su casa en un auténtico circo. Se te da bien tu profesión, y casi prefieres la vida de un animal sobre la de una persona. ";
+				+ " le gustó desde siempre la medicina, si bien finalmente optó con ser veterinaria. Hija de inmigrantes del norte de África logró una plaza en una de las más prestigiosas universidades del país gracias a años de ahorro y de horas extra en empleos mal pagados, lo que le enseñó el coste de la vida. Como gran amante de los animales, vive con varios de ellos en su casa. Tiene una colección de gatos, lagartos y aves exóticas que convierten su casa en un auténtico circo. Se le da bien su profesión, y casi prefiere la vida de un animal sobre la de una persona.";
 		String background = "Como científica que eres has intentado buscar respuestas a lo que ha ocurrido en la ciudad. Lo que te ha llevado a casi ser descubierta por un gran número de militares que se atrincheraban en la barriada. Has escapado a duras penas arrastrándote por los suelos y has acabado en una calle llena de sangre reseca. Te has llevado muestras para analizar y has descubierto que la sangre es siempre humana, y desde entonces, has caído en la cuenta de que ya no quedan animales en la ciudad. Hasta las ratas os han abandonado a vuestra suerte. ";
-		String specialRules = "Tienes un buen trato con los animales. Entiendes sus necesidades casi al instante y eres capaz de cuidarlos como solo ellos necesitan. Lo que te labra una buena amistad con ellos. ";
+		String specialRules = "Tienes un buen trato con los animales y te llenan de confianza siempre que ronden a tu alrededor. Siempre que tangas algún tipo de animal a tu cargo y este esté a la vista, tendrás un bonificador de +2 a Voluntad. ";
 		String secondaryObjectives = "Estás segura de que algo bueno se puede sacar de todo esto. Tu objetivo es intentar obtener una cura milagrosa que salve al mundo de algún gran mal y poder demostrar que también podrías ser un gran médico. ";
 
 		setDescription(characterPlayer, description, background, specialRules, secondaryObjectives);
