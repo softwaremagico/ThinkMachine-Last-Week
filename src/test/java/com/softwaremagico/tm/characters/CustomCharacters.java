@@ -624,7 +624,7 @@ public class CustomCharacters {
 
 		characterPlayer.addBlessing(BlessingFactory.getInstance().getElement("beastmaster", characterPlayer.getLanguage(),
 				characterPlayer.getModuleName()));
-		characterPlayer.addBlessing(BlessingFactory.getInstance().getElement("thrifty", characterPlayer.getLanguage(),
+		characterPlayer.addBlessing(BlessingFactory.getInstance().getElement("greedy", characterPlayer.getLanguage(),
 				characterPlayer.getModuleName()));
 		characterPlayer.addBenefice(AvailableBeneficeFactory.getInstance().getElement("cash [euros0]",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()));
