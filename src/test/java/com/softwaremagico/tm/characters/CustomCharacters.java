@@ -604,11 +604,11 @@ public class CustomCharacters {
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 3);
 
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("computing",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 4);
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 3);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("bureaucracy",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 3);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("landcarft",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 3);
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 2);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("ride",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 5);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("lore", "beastsLore",
@@ -616,9 +616,9 @@ public class CustomCharacters {
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("medicine",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 5);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("biology",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 6);
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 5);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("chemistry",
-				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 6);
+				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 5);
 		characterPlayer.setSkillRank(AvailableSkillsFactory.getInstance().getElement("socialScience",
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()), 2);
 
