@@ -5,7 +5,7 @@
 			<en>English Speaking</en>
 			<es>Anglosajón</es>
 		</name>
-		<group>none</group>
+		<restrictedToFactionGroup>none</restrictedToFactionGroup>
 		<restrictedToRaces>human</restrictedToRaces>
 		<random>
 			<names>
@@ -20,7 +20,7 @@
 			<en>Mediterranean</en>
 			<es>Mediterráneo</es>
 		</name>
-		<group>none</group>
+		<restrictedToFactionGroup>none</restrictedToFactionGroup>
 		<restrictedToRaces>human</restrictedToRaces>
 		<random>
 			<names>
@@ -35,7 +35,7 @@
 			<en>Russian</en>
 			<es>Rusos</es>
 		</name>
-		<group>none</group>
+		<restrictedToFactionGroup>none</restrictedToFactionGroup>
 		<restrictedToRaces>human</restrictedToRaces>
 		<random>
 			<names>
@@ -50,7 +50,7 @@
 			<en>Asian</en>
 			<es>Asiático</es>
 		</name>
-		<group>none</group>
+		<restrictedToFactionGroup>none</restrictedToFactionGroup>
 		<restrictedToRaces>human</restrictedToRaces>
 		<random>
 			<names>
@@ -65,7 +65,7 @@
 			<en>Arabian</en>
 			<es>Árabe</es>
 		</name>
-		<group>none</group>
+		<restrictedToFactionGroup>none</restrictedToFactionGroup>
 		<restrictedToRaces>human</restrictedToRaces>
 		<random>
 			<names>
