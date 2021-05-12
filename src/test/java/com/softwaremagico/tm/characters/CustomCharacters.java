@@ -21,6 +21,7 @@ import java.net.MalformedURLException;
 import java.util.HashSet;
 import java.util.Set;
 
+import com.softwaremagico.tm.character.skills.InvalidRanksException;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -106,7 +107,7 @@ public class CustomCharacters {
 	@Test
 	public void geek() throws MalformedURLException, DocumentException, IOException, InvalidXmlElementException,
 			TooManyBlessingsException, BeneficeAlreadyAddedException, BlessingAlreadyAddedException,
-			DuplicatedPreferenceException, InvalidRandomElementSelectedException {
+			DuplicatedPreferenceException, InvalidRandomElementSelectedException, InvalidRanksException {
 		final CharacterPlayer characterPlayer = new CharacterPlayer(LANGUAGE, MODULE_FOLDER);
 		characterPlayer.getInfo().setGender(Gender.MALE);
 		characterPlayer.getInfo().setAge(35);
@@ -172,10 +173,10 @@ public class CustomCharacters {
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()));
 
 		System.out.println("Geek " + CostCalculator.getCost(characterPlayer) + " de "
-				+ FreeStyleCharacterCreation.getFreeAvailablePoints(characterPlayer.getInfo().getAge()));
+				+ FreeStyleCharacterCreation.getFreeAvailablePoints(characterPlayer.getInfo().getAge(), characterPlayer.getRace()));
 
 		Assert.assertEquals(CostCalculator.getCost(characterPlayer),
-				FreeStyleCharacterCreation.getFreeAvailablePoints(characterPlayer.getInfo().getAge()));
+				FreeStyleCharacterCreation.getFreeAvailablePoints(characterPlayer.getInfo().getAge(), characterPlayer.getRace()));
 
 		setNames(characterPlayer);
 
@@ -194,7 +195,7 @@ public class CustomCharacters {
 	@Test
 	public void bill() throws MalformedURLException, DocumentException, IOException, InvalidXmlElementException,
 			TooManyBlessingsException, BeneficeAlreadyAddedException, BlessingAlreadyAddedException,
-			DuplicatedPreferenceException, InvalidRandomElementSelectedException {
+			DuplicatedPreferenceException, InvalidRandomElementSelectedException, InvalidRanksException {
 		final CharacterPlayer characterPlayer = new CharacterPlayer(LANGUAGE, MODULE_FOLDER);
 		characterPlayer.getInfo().setGender(Gender.MALE);
 		characterPlayer.getInfo().setAge(68);
@@ -276,10 +277,10 @@ public class CustomCharacters {
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()));
 
 		System.out.println("Bill " + CostCalculator.getCost(characterPlayer) + " de "
-				+ FreeStyleCharacterCreation.getFreeAvailablePoints(characterPlayer.getInfo().getAge()));
+				+ FreeStyleCharacterCreation.getFreeAvailablePoints(characterPlayer.getInfo().getAge(), characterPlayer.getRace()));
 
 		Assert.assertEquals(CostCalculator.getCost(characterPlayer),
-				FreeStyleCharacterCreation.getFreeAvailablePoints(characterPlayer.getInfo().getAge()));
+				FreeStyleCharacterCreation.getFreeAvailablePoints(characterPlayer.getInfo().getAge(), characterPlayer.getRace()));
 
 		setNames(characterPlayer);
 
@@ -298,7 +299,7 @@ public class CustomCharacters {
 	@Test
 	public void piousGirl() throws MalformedURLException, DocumentException, IOException, InvalidXmlElementException,
 			TooManyBlessingsException, BeneficeAlreadyAddedException, BlessingAlreadyAddedException,
-			DuplicatedPreferenceException, InvalidRandomElementSelectedException {
+			DuplicatedPreferenceException, InvalidRandomElementSelectedException, InvalidRanksException {
 		final CharacterPlayer characterPlayer = new CharacterPlayer(LANGUAGE, MODULE_FOLDER);
 		characterPlayer.getInfo().setGender(Gender.FEMALE);
 		characterPlayer.getInfo().setAge(31);
@@ -374,10 +375,10 @@ public class CustomCharacters {
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()));
 
 		System.out.println("Pious " + CostCalculator.getCost(characterPlayer) + " de "
-				+ FreeStyleCharacterCreation.getFreeAvailablePoints(characterPlayer.getInfo().getAge()));
+				+ FreeStyleCharacterCreation.getFreeAvailablePoints(characterPlayer.getInfo().getAge(), characterPlayer.getRace()));;
 
 		Assert.assertEquals(CostCalculator.getCost(characterPlayer),
-				FreeStyleCharacterCreation.getFreeAvailablePoints(characterPlayer.getInfo().getAge()));
+				FreeStyleCharacterCreation.getFreeAvailablePoints(characterPlayer.getInfo().getAge(), characterPlayer.getRace()));;
 
 		setNames(characterPlayer);
 
@@ -396,7 +397,7 @@ public class CustomCharacters {
 	@Test
 	public void sportGirl() throws MalformedURLException, DocumentException, IOException, InvalidXmlElementException,
 			TooManyBlessingsException, BeneficeAlreadyAddedException, BlessingAlreadyAddedException,
-			DuplicatedPreferenceException, InvalidRandomElementSelectedException {
+			DuplicatedPreferenceException, InvalidRandomElementSelectedException, InvalidRanksException {
 		final CharacterPlayer characterPlayer = new CharacterPlayer(LANGUAGE, MODULE_FOLDER);
 		characterPlayer.getInfo().setGender(Gender.FEMALE);
 		characterPlayer.getInfo().setAge(32);
@@ -455,10 +456,10 @@ public class CustomCharacters {
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()));
 
 		System.out.println("SportGirl " + CostCalculator.getCost(characterPlayer) + " de "
-				+ FreeStyleCharacterCreation.getFreeAvailablePoints(characterPlayer.getInfo().getAge()));
+				+ FreeStyleCharacterCreation.getFreeAvailablePoints(characterPlayer.getInfo().getAge(), characterPlayer.getRace()));;
 
 		Assert.assertEquals(CostCalculator.getCost(characterPlayer),
-				FreeStyleCharacterCreation.getFreeAvailablePoints(characterPlayer.getInfo().getAge()));
+				FreeStyleCharacterCreation.getFreeAvailablePoints(characterPlayer.getInfo().getAge(), characterPlayer.getRace()));;
 
 		setNames(characterPlayer);
 
@@ -477,7 +478,7 @@ public class CustomCharacters {
 	@Test
 	public void bandGirl() throws MalformedURLException, DocumentException, IOException, InvalidXmlElementException,
 			TooManyBlessingsException, BeneficeAlreadyAddedException, BlessingAlreadyAddedException,
-			DuplicatedPreferenceException, InvalidRandomElementSelectedException {
+			DuplicatedPreferenceException, InvalidRandomElementSelectedException, InvalidRanksException {
 		final CharacterPlayer characterPlayer = new CharacterPlayer(LANGUAGE, MODULE_FOLDER);
 		characterPlayer.getInfo().setGender(Gender.FEMALE);
 		characterPlayer.getInfo().setAge(39);
@@ -541,10 +542,10 @@ public class CustomCharacters {
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()));
 
 		System.out.println("BandGirl " + CostCalculator.getCost(characterPlayer) + " de "
-				+ FreeStyleCharacterCreation.getFreeAvailablePoints(characterPlayer.getInfo().getAge()));
+				+ FreeStyleCharacterCreation.getFreeAvailablePoints(characterPlayer.getInfo().getAge(), characterPlayer.getRace()));;
 
 		Assert.assertEquals(CostCalculator.getCost(characterPlayer),
-				FreeStyleCharacterCreation.getFreeAvailablePoints(characterPlayer.getInfo().getAge()));
+				FreeStyleCharacterCreation.getFreeAvailablePoints(characterPlayer.getInfo().getAge(), characterPlayer.getRace()));;
 
 		setNames(characterPlayer);
 
@@ -563,7 +564,7 @@ public class CustomCharacters {
 	@Test
 	public void veterinary() throws MalformedURLException, DocumentException, IOException, InvalidXmlElementException,
 			TooManyBlessingsException, BeneficeAlreadyAddedException, BlessingAlreadyAddedException,
-			DuplicatedPreferenceException, InvalidRandomElementSelectedException {
+			DuplicatedPreferenceException, InvalidRandomElementSelectedException, InvalidRanksException {
 		final CharacterPlayer characterPlayer = new CharacterPlayer(LANGUAGE, MODULE_FOLDER);
 		characterPlayer.getInfo().setGender(Gender.FEMALE);
 		characterPlayer.getInfo().setAge(31);
@@ -630,10 +631,10 @@ public class CustomCharacters {
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()));
 
 		System.out.println("Vet " + CostCalculator.getCost(characterPlayer) + " de "
-				+ FreeStyleCharacterCreation.getFreeAvailablePoints(characterPlayer.getInfo().getAge()));
+				+ FreeStyleCharacterCreation.getFreeAvailablePoints(characterPlayer.getInfo().getAge(), characterPlayer.getRace()));;
 
 		Assert.assertEquals(CostCalculator.getCost(characterPlayer),
-				FreeStyleCharacterCreation.getFreeAvailablePoints(characterPlayer.getInfo().getAge()));
+				FreeStyleCharacterCreation.getFreeAvailablePoints(characterPlayer.getInfo().getAge(), characterPlayer.getRace()));;
 
 		setNames(characterPlayer);
 
@@ -652,7 +653,7 @@ public class CustomCharacters {
 	@Test
 	public void nerd() throws MalformedURLException, DocumentException, IOException, InvalidXmlElementException,
 			TooManyBlessingsException, BeneficeAlreadyAddedException, BlessingAlreadyAddedException,
-			DuplicatedPreferenceException, InvalidRandomElementSelectedException {
+			DuplicatedPreferenceException, InvalidRandomElementSelectedException, InvalidRanksException {
 		final CharacterPlayer characterPlayer = new CharacterPlayer(LANGUAGE, MODULE_FOLDER);
 		characterPlayer.getInfo().setGender(Gender.MALE);
 		characterPlayer.getInfo().setAge(21);
@@ -724,10 +725,10 @@ public class CustomCharacters {
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()));
 
 		System.out.println("Nerd " + CostCalculator.getCost(characterPlayer) + " de "
-				+ FreeStyleCharacterCreation.getFreeAvailablePoints(characterPlayer.getInfo().getAge()));
+				+ FreeStyleCharacterCreation.getFreeAvailablePoints(characterPlayer.getInfo().getAge(), characterPlayer.getRace()));;
 
 		Assert.assertEquals(CostCalculator.getCost(characterPlayer),
-				FreeStyleCharacterCreation.getFreeAvailablePoints(characterPlayer.getInfo().getAge()));
+				FreeStyleCharacterCreation.getFreeAvailablePoints(characterPlayer.getInfo().getAge(), characterPlayer.getRace()));;
 
 		setNames(characterPlayer);
 
@@ -746,7 +747,7 @@ public class CustomCharacters {
 	@Test
 	public void teacher() throws MalformedURLException, DocumentException, IOException, InvalidXmlElementException,
 			TooManyBlessingsException, BeneficeAlreadyAddedException, BlessingAlreadyAddedException,
-			DuplicatedPreferenceException, InvalidRandomElementSelectedException {
+			DuplicatedPreferenceException, InvalidRandomElementSelectedException, InvalidRanksException {
 		final CharacterPlayer characterPlayer = new CharacterPlayer(LANGUAGE, MODULE_FOLDER);
 		characterPlayer.getInfo().setGender(Gender.MALE);
 		characterPlayer.getInfo().setAge(31);
@@ -820,10 +821,10 @@ public class CustomCharacters {
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()));
 
 		System.out.println("Teacher " + CostCalculator.getCost(characterPlayer) + " de "
-				+ FreeStyleCharacterCreation.getFreeAvailablePoints(characterPlayer.getInfo().getAge()));
+				+ FreeStyleCharacterCreation.getFreeAvailablePoints(characterPlayer.getInfo().getAge(), characterPlayer.getRace()));;
 
 		Assert.assertEquals(CostCalculator.getCost(characterPlayer),
-				FreeStyleCharacterCreation.getFreeAvailablePoints(characterPlayer.getInfo().getAge()));
+				FreeStyleCharacterCreation.getFreeAvailablePoints(characterPlayer.getInfo().getAge(), characterPlayer.getRace()));;
 
 		setNames(characterPlayer);
 
@@ -842,7 +843,7 @@ public class CustomCharacters {
 	@Test
 	public void cartomancer() throws MalformedURLException, DocumentException, IOException, InvalidXmlElementException,
 			TooManyBlessingsException, BeneficeAlreadyAddedException, BlessingAlreadyAddedException,
-			DuplicatedPreferenceException, InvalidRandomElementSelectedException {
+			DuplicatedPreferenceException, InvalidRandomElementSelectedException, InvalidRanksException {
 		final CharacterPlayer characterPlayer = new CharacterPlayer(LANGUAGE, MODULE_FOLDER);
 		characterPlayer.getInfo().setGender(Gender.FEMALE);
 		characterPlayer.getInfo().setAge(51);
@@ -908,10 +909,10 @@ public class CustomCharacters {
 				characterPlayer.getLanguage(), characterPlayer.getModuleName()));
 
 		System.out.println("Cartomancer " + CostCalculator.getCost(characterPlayer) + " de "
-				+ FreeStyleCharacterCreation.getFreeAvailablePoints(characterPlayer.getInfo().getAge()));
+				+ FreeStyleCharacterCreation.getFreeAvailablePoints(characterPlayer.getInfo().getAge(), characterPlayer.getRace()));;
 
 		Assert.assertEquals(CostCalculator.getCost(characterPlayer),
-				FreeStyleCharacterCreation.getFreeAvailablePoints(characterPlayer.getInfo().getAge()));
+				FreeStyleCharacterCreation.getFreeAvailablePoints(characterPlayer.getInfo().getAge(), characterPlayer.getRace()));;
 
 		setNames(characterPlayer);
 
@@ -930,7 +931,7 @@ public class CustomCharacters {
 	@Test
 	public void dwarf() throws MalformedURLException, DocumentException, IOException, InvalidXmlElementException,
 			TooManyBlessingsException, BeneficeAlreadyAddedException, BlessingAlreadyAddedException,
-			DuplicatedPreferenceException, InvalidRandomElementSelectedException {
+			DuplicatedPreferenceException, InvalidRandomElementSelectedException, InvalidRanksException {
 		final CharacterPlayer characterPlayer = new CharacterPlayer(LANGUAGE, MODULE_FOLDER);
 		characterPlayer.getInfo().addName(new Name("Peter", characterPlayer.getLanguage(),
 				characterPlayer.getModuleName(), Gender.MALE, characterPlayer.getFaction()));
@@ -1006,10 +1007,10 @@ public class CustomCharacters {
 				characterPlayer.getModuleName()));
 
 		System.out.println("Dwarf " + CostCalculator.getCost(characterPlayer) + " de "
-				+ FreeStyleCharacterCreation.getFreeAvailablePoints(characterPlayer.getInfo().getAge()));
+				+ FreeStyleCharacterCreation.getFreeAvailablePoints(characterPlayer.getInfo().getAge(), characterPlayer.getRace()));;
 
 		Assert.assertEquals(CostCalculator.getCost(characterPlayer),
-				FreeStyleCharacterCreation.getFreeAvailablePoints(characterPlayer.getInfo().getAge()));
+				FreeStyleCharacterCreation.getFreeAvailablePoints(characterPlayer.getInfo().getAge(), characterPlayer.getRace()));;
 
 		setNames(characterPlayer);
 

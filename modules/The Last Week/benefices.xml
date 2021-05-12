@@ -344,7 +344,7 @@
 			</master>
 		</specializations>
 		<group>status</group>
-		<restricted>guild</restricted>
+		<restrictedTo>guild</restrictedTo>
 	</commission>
 	<nobility>
 		<name>
@@ -396,7 +396,7 @@
 			</duke>
 		</specializations>
 		<group>status</group>
-		<restricted>nobility</restricted>
+		<restrictedTo>nobility</restrictedTo>
 	</nobility>
 	<ordained>
 		<name>
@@ -448,7 +448,7 @@
 			</archbishop>
 		</specializations>
 		<group>status</group>
-		<restricted>church</restricted>
+		<restrictedTo>church</restrictedTo>
 	</ordained>
 	<bastard>
 		<name>
